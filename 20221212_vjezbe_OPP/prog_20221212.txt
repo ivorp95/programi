@@ -1,0 +1,177 @@
+#include<stdio.h>
+#include<math.h>
+
+
+int main()
+{
+
+	float a, b, c, opseg;
+	printf("\n Program izračunava Opseg trokuta za unesene stranice a, b, c.\n");
+	
+	printf("Unesi a: ");
+	scanf_s("%f", &a);
+	
+	printf("Unesi b: ");
+	scanf_s("%f", &b);
+
+	printf("Unesi c: ");
+	scanf_s("%f", &c);
+
+	opseg = a + b + c;
+	printf("\n Opseg iznosi: %4.2f \n", opseg);
+
+
+	return 0;
+}
+
+
+
+
+
+
+#include<stdio.h>
+#include<math.h>
+
+
+int main()
+{
+
+	float a, b, c, d;
+	printf("\n Program izracunava polovinu, cetvrtinu, i osminu za uneseni a.\n");
+
+	printf("Unesi a: ");
+	scanf_s("%f", &a);
+
+	b = a / 2;
+	c = b / 2;
+	d = c / 2;
+
+	printf("\n b= %2.2f \n c= %2.2f \n d= %2.2f", b, c, d);
+
+
+	return 0;
+}
+
+
+
+
+
+
+#include<stdio.h>
+#include<math.h>
+
+
+int main()
+{
+
+	float a, b, c, diskr, nazivnik, x1, x2;
+
+	printf("\n Program izracnava x1 i x2 kvadratne jednadzbe za unesene a, b, c.\n");
+
+	printf("Unesi a: ");
+	scanf_s("%f", &a);
+
+	printf("Unesi b: ");
+	scanf_s("%f", &b);
+
+	printf("Unesi c: ");
+	scanf_s("%f", &c);
+
+	diskr = pow(b, 2) - 4 * a * c;
+	nazivnik = 2 * a;
+
+	x1 = (-b + sqrt(diskr)) / nazivnik;
+	x2 = (-b - sqrt(diskr)) / nazivnik;
+
+
+	printf("\n x1= %2.2f \n x2= %2.2f ", x1, x2);
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+#include<stdio.h>
+#include<math.h>
+
+
+int main()
+{
+
+	int a, b;
+
+	printf("\n Program provjerava je li uneseni a parni broj.\n");
+
+	printf("Unesi a: ");
+	scanf_s("%d", &a);
+
+	b = a % 2;
+
+	if (b != 1) {
+		printf("\n Uneseni a JE parni broj.\n");
+	}
+	else {
+		printf("\n Uneseni a NIJE parni broj.\n");
+	}
+
+
+	return 0;
+}
+
+
+
+
+
+
+
+#include<stdio.h>
+#include<math.h>
+
+
+int main()
+{
+	
+	int a, b, x;
+
+	printf("\n Program provjerava jesu li uneseni a i b parni broj. \n Ukoliko su oba broja parna izračunati sumu tih brojeva. \n Ukoliko je prvi paran, a drugi neparan ispisati razliku tih brojeva. \n Ukoliko je prvi neparan, a drugi paran ispisati produkt tih brojeva. \n Ako nijedan nije paran ispisati poruku da nijedan nije paran.\n" );
+
+	printf("Unesi a: ");
+	scanf_s("%d", &a);
+
+	printf("Unesi b: ");
+	scanf_s("%d", &b);
+
+	//x = a % 2;
+
+	if (a % 2 == 0 && b % 2 == 0) {
+
+		x = a + b;
+		printf("\n X= %d \n", x);
+	}
+
+	else if (a % 2 == 0 && b % 2 == 1) {
+
+		x = a - b;
+		printf("\n X= %d \n", x);
+	}
+
+	else if (a % 2 == 1 && b % 2 == 0) {
+
+		x = a * b;
+		printf("\n X= %d \n", x);
+	}
+
+	else {
+		printf("Nijedan nije paran");
+	}
+	return 0;
+}
+
+
+
+
