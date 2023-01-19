@@ -14,7 +14,7 @@ do{
     i++;
     suma=suma+broj_a;
 }
-while(broj_a>=10);
+while(broj_a>=10 && broj_a<100);
 
 
 printf("\nUkupno unesenih brojeva: %d\n", i);
