@@ -13,7 +13,7 @@ while(broj<10 || broj>99);
 
 i=0;
 
-while(i<=broj){
+while(i<broj){
 
 i=i+4;
 printf("\n svaki cetvrti je: %d\n", i);
