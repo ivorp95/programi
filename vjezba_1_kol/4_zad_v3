@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main ()
+{
+
+int i, broj;
+
+do {
+    printf("\n unesi cijeli dvoznamenkasti broj:");
+    scanf("%d", &broj);
+}
+while(broj<10 && broj>99);
+
+
+
+
+
+
+    return 0;
+}
