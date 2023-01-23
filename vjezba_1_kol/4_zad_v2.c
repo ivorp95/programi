@@ -18,4 +18,5 @@ printf("\nProsjek vrjednosti svih brojeva: %.2f\n", suma/i);
 
 return 0;
 
+
 }
