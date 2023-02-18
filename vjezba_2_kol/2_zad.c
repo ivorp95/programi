@@ -22,7 +22,7 @@ scanf("%d", &*pbroj_2);
 
 
 
-printf(" Z = cos(x)-2y =   %.3f \n", *pbroj_3);
+printf(" Z = cos(x)-2y =   %.3f \n", *pbroj_3);     //printf ispisuje vrijednost na adresi koju cuva *pointer varijabla
 
     return 0;
 }
