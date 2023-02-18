@@ -24,7 +24,7 @@ printf(" ascii: %c \n", ascii);
 
 char ascii_znak(int broj){
 
-if(broj>=65 && broj<=125 )
+if(broj>=33 && broj<=125 )
 return broj;
 
 else
