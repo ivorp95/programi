@@ -10,7 +10,7 @@ pdatoteka=fopen("/users/ivorp/desktop/file","w");
 if (pdatoteka){
 printf("datoteka je kreirana\n");
     for(i=1;i<=100;i++){
-        if(i%5==0)
+        if(i%2==0)
         fprintf(pdatoteka,"\t%d\n",i);
 
     }
