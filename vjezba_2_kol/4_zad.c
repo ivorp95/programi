@@ -5,7 +5,7 @@ int main (){
 FILE* pdatoteka;
 int i;
 
-pdatoteka=fopen("/users/ivorp/desktop/kontrolna_zadaca.txt","w");
+pdatoteka=fopen("/users/ivorp/desktop/file","w");
 
 if (pdatoteka){
 printf("datoteka je kreirana\n");
