@@ -3,19 +3,18 @@
 #include <string.h>
 #define DEBUG 1
 
+
+float prosjek_izracun(int ukupno, int ocjena[]);
+
+
+int main(){
+
 typedef struct{
     int jmbag,br_ocjena,god_rod;
     int ocjene[10];
     float prosjek;
     char ime[21], prezime[21];
 }student;
-
-float prosjek_izracun(int ukupno, int ocjena[]);
-
-
-
-
-int main(){
 
 int i,j,MAX;
 char enter;
