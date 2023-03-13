@@ -42,6 +42,11 @@ for(i=0;i<4;i++){
     }
 }
 
+for(i=0;i<4;i++){
+    if(strcmp(ljubimac_default.vrsta,ljubimci[i].vrsta)==0 && strcmp(ljubimac_default.ime,ljubimci[i].ime)==0 && strcmp(ljubimac_default.boja,ljubimci[i].boja)==0 && ljubimac_default.godine == ljubimci[i].godine)
+    printf("%d. Ljubimac ima iste podate kao predefinirani", i+1);
+}
+
 printf("\n\n Default ljubimac \n\tVrsta: %s \n\tIme: %s  \n\tBoja: %s \n\tGodine: %d\n", ljubimac_default.vrsta, ljubimac_default.ime, ljubimac_default.boja, ljubimac_default.godine);
 
 
