@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
-#define DEBUG 1
 
 
 float prosjek_izracun(int ukupno, int ocjena[]);
@@ -16,7 +15,7 @@ typedef struct{
     char ime[21], prezime[21];
 }student;
 
-int i,j,MAX;
+int i,j,MAX=0;
 char enter;
 student Student[MAX];
 
@@ -24,21 +23,21 @@ printf("\nUnesite max kolicinu unosa: ");
 scanf("%d",&MAX);
 
 for (i=0;i<MAX;i++){
-    printf("\n\nUnesite Ime i prezime %d. studenta",i+1);
+    printf("\n\nUnesite Ime i prezime %d. studenta: ",i+1);
     scanf("%20s %20s",Student[i].ime,Student[i].prezime);
 
-    printf("\nUnesite JMBAG %d. studenta",i+1);
+    printf("\nUnesite JMBAG %d. studenta: ",i+1);
     scanf("%d",&Student[i].jmbag);
 
-    printf("\nUnesite Godinu rodenja %d. studenta",i+1);
+    printf("\nUnesite Godinu rodenja %d. studenta: ",i+1);
     scanf("%d",&Student[i].god_rod);
 
-    printf("\nUnesite ukupni broj ocjena %d. studenta",i+1);
+    printf("\nUnesite ukupni broj ocjena %d. studenta: ",i+1);
     scanf("%d",&Student[i].br_ocjena);
 
 
-        for (j=0;j<=Student[i].br_ocjena;j++){
-        printf("\n Unesite ocjenu za %d predmet ", j+1);
+        for (j=0;j<Student[i].br_ocjena;j++){
+        printf("\n Unesite ocjenu za %d predmet: ", j+1);
         scanf("%d",&Student[i].ocjene[j]);
         }
 
