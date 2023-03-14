@@ -15,6 +15,9 @@ typedef struct{
     char ime[21], prezime[21];
 }student;
 
+FILE *pdatoteka;
+pdatoteka=fopen("/users/ivorp/desktop/file","w+");
+
 int i,j,unos;
 char enter;
 
@@ -52,7 +55,7 @@ for (i=0;i<unos;i++){
 }
 
 for (i=0;i<unos;i++){
-    printf("\n %d. Student: \n\t Ime i prezime: %s %s \n\t JMBAG: %d \n\t Godiste: %d \n\t Ocjenjeno %d predmeta \n\t Prosjek ocjena: %.2f \n",i+1, Student[i].ime,Student[i].prezime,Student[i].jmbag,Student[i].god_rod, Student[i].br_ocjena,Student[i].prosjek);
+    fprintf(pdatoteka,"\n %d. Student: \n\t Ime i prezime: %s %s \n\t JMBAG: %d \n\t Godiste: %d \n\t Ocjenjeno %d predmeta \n\t Prosjek ocjena: %.2f \n",i+1, Student[i].ime,Student[i].prezime,Student[i].jmbag,Student[i].god_rod, Student[i].br_ocjena,Student[i].prosjek);
 }
 
 
