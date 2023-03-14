@@ -17,15 +17,17 @@ typedef struct{
 
 int i,j,MAX=0;
 char enter;
-student Student[MAX];
 
 printf("\nUnesite max kolicinu unosa: ");
 scanf("%d",&MAX);
 
+// BITNO ! deklarirati polja za strukturu nakon unosa MAX vrijednosti
+student Student[MAX];
+
 for (i=0;i<MAX;i++){
     printf("\n\nUnesite Ime  %d. studenta: ",i+1);
     scanf("%20s",Student[i].ime);
-    printf("\n\nUnesite Prezime  %d. studenta: ",i+1);
+    printf("\nUnesite Prezime  %d. studenta: ",i+1);
     scanf("%20s",Student[i].prezime);
 
     printf("\nUnesite JMBAG %d. studenta: ",i+1);
@@ -48,8 +50,8 @@ for (i=0;i<MAX;i++){
 }
 
 
-for (i=0;i<=MAX;i++){
-    printf("\n %d. Student: \n\tIme: %s %s \n\t JMBAG: %d \n\t Godiste: %d \n\t Ocjenjeno %d predmeta \n\t Prosjek ocjena: %.2f ",i+1, Student[i].ime,Student[i].prezime,Student[i].jmbag,Student[i].god_rod, Student[i].br_ocjena,Student[i].prosjek);
+for (i=0;i<MAX;i++){
+    printf("\n %d. Student: \n\t Ime i prezime: %s %s \n\t JMBAG: %d \n\t Godiste: %d \n\t Ocjenjeno %d predmeta \n\n\t Prosjek ocjena: %.2f \n",i+1, Student[i].ime,Student[i].prezime,Student[i].jmbag,Student[i].god_rod, Student[i].br_ocjena,Student[i].prosjek);
 }
 
 
@@ -58,16 +60,12 @@ return 0;
 }
 
 
-
-
-
 float prosjek_izracun(int ukupno, int ocjena[]){
 int i;
-float suma, prosjek;
-for (i=0; i<=ukupno; i++)
+float suma=0, prosjek=0;
+
+for (i=0; i<ukupno; i++)
     suma+=ocjena[i];
 
-prosjek=suma/ukupno;
-
-return prosjek;
+return prosjek=suma/ukupno;
 };
