@@ -23,8 +23,10 @@ printf("\nUnesite max kolicinu unosa: ");
 scanf("%d",&MAX);
 
 for (i=0;i<MAX;i++){
-    printf("\n\nUnesite Ime i prezime %d. studenta: ",i+1);
-    scanf("%20s %20s",Student[i].ime,Student[i].prezime);
+    printf("\n\nUnesite Ime  %d. studenta: ",i+1);
+    scanf("%20s",Student[i].ime);
+    printf("\n\nUnesite Prezime  %d. studenta: ",i+1);
+    scanf("%20s",Student[i].prezime);
 
     printf("\nUnesite JMBAG %d. studenta: ",i+1);
     scanf("%d",&Student[i].jmbag);
