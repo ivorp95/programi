@@ -17,9 +17,9 @@ typedef struct {
 
 float prosjek_izracun(int ukupno, int ocjena[]);
 
-void unos_vrijednosti(Student* pstudent);
+void unos_vrijednosti(Student* pstudent, int broj_unosa);
 
-void ispis_vrijednosti(Student* pstudent);
+void ispis_vrijednosti(Student* pstudent,int broj_unosa);
 
 
 
@@ -39,10 +39,10 @@ int main() {
 
 
     pstudent = &student[0];
-    unos_vrijednosti(&pstudent);
+    unos_vrijednosti(pstudent, unos);
 
     pstudent = &student[0];
-    ispis_vrijednosti(&pstudent);
+    ispis_vrijednosti(pstudent, unos);
 
 
 
@@ -63,9 +63,9 @@ float prosjek_izracun(int ukupno, int ocjena[]) {
 
 
 
-void unos_vrijednosti(Student* pstudent) {
+void unos_vrijednosti(Student* pstudent, int broj_unosa) {
 
-    for (int i = 0; i < MAX; i++) {
+    for (int i = 0; i < broj_unosa; i++) {
         printf("\n\nUnesite Ime  %d. studenta: ", i + 1);
         scanf("%20s", pstudent->ime);
         printf("\nUnesite Prezime  %d. studenta: ", i + 1);
@@ -96,9 +96,9 @@ void unos_vrijednosti(Student* pstudent) {
 
 
 
-void ispis_vrijednosti(Student* pstudent) {
+void ispis_vrijednosti(Student* pstudent, int broj_unosa) {
 
-    for (int i = 0; i < MAX; i++) {
+    for (int i = 0; i < broj_unosa; i++) {
         printf("\n %d. Student: \n\t Ime i prezime: %s %s \n\t JMBAG: %d \n\t Godiste: %d \n\t Ocjenjeno %d predmeta \n\t Prosjek ocjena: %.2f \n", i + 1, pstudent->ime, pstudent->prezime, pstudent->jmbag, pstudent->god_rod, pstudent->br_ocjena, pstudent->prosjek);
 
     }
