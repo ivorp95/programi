@@ -1,3 +1,5 @@
+// LLVM framework  - clang -g  compiler, LLDB - debugger
+
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
@@ -21,8 +23,6 @@ void ispis_vrijednosti(Student* pstudent);
 
 
 
-
-
 int main() {
 
     int i, j, unos;
@@ -34,7 +34,7 @@ int main() {
 
     do {
         printf("\nUnesite kolicinu unosa (MAX 50): ");
-        scanf_s("%d", &unos);
+        scanf("%d", &unos);
     } while (unos > MAX || unos < 1);
 
 
@@ -63,32 +63,27 @@ float prosjek_izracun(int ukupno, int ocjena[]) {
 
 
 
-
-
-
-
-
 void unos_vrijednosti(Student* pstudent) {
 
     for (int i = 0; i < MAX; i++) {
         printf("\n\nUnesite Ime  %d. studenta: ", i + 1);
-        scanf_s("%20s", pstudent->ime);
+        scanf("%20s", pstudent->ime);
         printf("\nUnesite Prezime  %d. studenta: ", i + 1);
-        scanf_s("%20s", pstudent->prezime);
+        scanf("%20s", pstudent->prezime);
 
         printf("\nUnesite JMBAG %d. studenta: ", i + 1);
-        scanf_s("%u", &pstudent->jmbag);
+        scanf("%u", &pstudent->jmbag);
 
         printf("\nUnesite Godinu rodenja %d. studenta: ", i + 1);
-        scanf_s("%d", &pstudent->god_rod);
+        scanf("%d", &pstudent->god_rod);
 
         printf("\nUnesite ukupni broj ocjena %d. studenta: ", i + 1);
-        scanf_s("%d", &pstudent->br_ocjena);
+        scanf("%d", &pstudent->br_ocjena);
 
 
         for (int j = 0; j < pstudent->br_ocjena; j++) {
             printf("\n Unesite ocjenu za %d predmet: ", j + 1);
-            scanf_s("%d", &pstudent->ocjene[j]);
+            scanf("%d", &pstudent->ocjene[j]);
         }
 
         pstudent->prosjek = prosjek_izracun(pstudent->br_ocjena, pstudent->ocjene);
