@@ -17,7 +17,7 @@ typedef struct {
 
 float prosjek_izracun(int ukupno, int ocjena[]);
 
-void unos_vrijednosti(Student* pstudent, int broj_unosa);
+void unos_vrijednosti(Student* pstudent,int broj_unosa);
 
 void ispis_vrijednosti(Student* pstudent,int broj_unosa);
 
@@ -25,12 +25,9 @@ void ispis_vrijednosti(Student* pstudent,int broj_unosa);
 
 int main() {
 
-    int i, j, unos;
+    int unos;
 
     Student student[MAX], * pstudent;
-
-
-
 
     do {
         printf("\nUnesite kolicinu unosa (MAX 50): ");
@@ -43,8 +40,6 @@ int main() {
 
     pstudent = &student[0];
     ispis_vrijednosti(pstudent, unos);
-
-
 
     return 0;
 }
@@ -100,7 +95,7 @@ void ispis_vrijednosti(Student* pstudent, int broj_unosa) {
 
     for (int i = 0; i < broj_unosa; i++) {
         printf("\n %d. Student: \n\t Ime i prezime: %s %s \n\t JMBAG: %d \n\t Godiste: %d \n\t Ocjenjeno %d predmeta \n\t Prosjek ocjena: %.2f \n", i + 1, pstudent->ime, pstudent->prezime, pstudent->jmbag, pstudent->god_rod, pstudent->br_ocjena, pstudent->prosjek);
-
+    pstudent++;
     }
 
 
