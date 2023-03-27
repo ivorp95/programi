@@ -4,25 +4,29 @@
 
 
 
-    typedef struct{ 
+typedef struct{ 
     char datum[12];
     char vrsta;
     int broj_sati;
-    } Nastava;
+} Nastava;
 
 
-    typedef struct{
+typedef struct{
     int iZadnji;
     Nastava elementi[MAX];
-    } Lista;
+} Lista;
+
+    
+void ubaci(Nastava noviElement, int iUbaci, Lista* plista);
+void ispisi(Lista* plista);
+
+/*
+void ispisi_v2(Lista lista);
+void obrisi(int iObrisi, Lista* plista);
+*/
 
 
-    void ubaci(Nastava noviElement, int iUbaci, Lista* plista);
-    void ispisi(Lista* plista);
-    void ispisi_v2(Lista lista);
-    void obrisi(int iObrisi, Lista* plista);
-
-    int main() {
+int main() {
     
     int i;
     int broj_tremina;
@@ -62,15 +66,12 @@
 
         } while (nastava_unos.broj_sati <= 0);
 
-    ubaci(nastava_unos, i, &lista_nastave);
+        ubaci(nastava_unos, i, &lista_nastave);
 
-    ispisi(&lista_nastave);
+        ispisi(&lista_nastave);
+    }
 
-
-
-}
-
-return 0;
+    return 0;
 }
 
 
@@ -93,33 +94,29 @@ void ubaci(Nastava noviElement, int iUbaci, Lista* plista){
 }
 
 
-void ispisi(Lista* plista)
-{
-int i;
-int uk_P = 0, uk_V = 0, uk_S = 0;
+void ispisi(Lista* plista){
+    int i;
+    int uk_P = 0, uk_V = 0, uk_S = 0;
 
-for (i = 0; i <= plista->iZadnji; i++)
-{
-printf("\n\t Datum: %s ", plista->elementi[i].datum);
-printf("\n\t vrsta: %s ", plista->elementi[i].vrsta);
-printf("\n\t dob: %d ", plista->elementi[i].broj_sati);
+    for (i = 0; i <= plista->iZadnji; i++){
+        printf("\n\t Datum: %s ", plista->elementi[i].datum);
+        printf("\n\t vrsta: %c ", plista->elementi[i].vrsta);
+        printf("\n\t dob: %d ", plista->elementi[i].broj_sati);
+    }
 
-if (plista->elementi[i].vrsta == 'P')
-uk_P += plista->elementi[i].broj_sati;
-if (plista->elementi[i].vrsta == 'V')
-uk_V += plista->elementi[i].broj_sati;
-if (plista->elementi[i].vrsta == 'S')
-uk_S += plista->elementi[i].broj_sati;
+    if (plista->elementi[i].vrsta == 'P')
+        uk_P += plista->elementi[i].broj_sati;
+    if (plista->elementi[i].vrsta == 'V')
+        uk_V += plista->elementi[i].broj_sati;
+    if (plista->elementi[i].vrsta == 'S')
+        uk_S += plista->elementi[i].broj_sati;
 
-printf("Ukupno - Predavanja: %d; Vjezbe: %d; Semninar: %d ", uk_P,uk_V,uk_S );
+    printf("Ukupno - Predavanja: %d; Vjezbe: %d; Semninar: %d ", uk_P,uk_V,uk_S );
 
 
 }
-}
 
-
-
-
+/*  
 void ispisi_v2(Lista lista)
 {
 int i;
@@ -151,3 +148,4 @@ plista->elementi[i] = plista->elementi[i + 1];
 plista->iZadnji--;
 }
 }
+*/
