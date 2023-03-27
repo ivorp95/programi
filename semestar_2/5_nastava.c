@@ -43,26 +43,26 @@ int main() {
     for (i = 0; i <= broj_tremina; i++) {
 
         printf("\n\t Unesite datum: ");
-        scanf("%20s", nastava_unos.datum, 12);
+        scanf("%20s", nastava_unos.datum);
 
         //scanf("%c", &enter, 1);
 
         do {
-        printf("\t Unesite vrstu sata ( P , V , ili S ) : ");
+        printf("\t\nUnesite vrstu sata ( P , V , ili S ) : ");
         scanf(" %c", &nastava_unos.vrsta);
 
             if (nastava_unos.vrsta != 'P' || nastava_unos.vrsta != 'V' || nastava_unos.vrsta != 'S')
-            printf("unesite ( P , V , ili S )");
+            printf("\t\nunesite ( P , V , ili S )");
 
         } while (nastava_unos.vrsta != 'P' || nastava_unos.vrsta != 'V' || nastava_unos.vrsta != 'S');
 
 
         do {
-        printf("\t Unesite broj odrzanih sati > 0 : ");
+        printf("\t\nUnesite broj odrzanih sati > 0 : ");
         scanf("%d", &nastava_unos.broj_sati);
 
             if (nastava_unos.broj_sati <= 0)
-            printf("Broj mora bit veci od 0");
+            printf("\t\nBroj mora bit veci od 0");
 
         } while (nastava_unos.broj_sati <= 0);
 
@@ -111,7 +111,7 @@ void ispisi(Lista* plista){
     if (plista->elementi[i].vrsta == 'S')
         uk_S += plista->elementi[i].broj_sati;
 
-    printf("Ukupno - Predavanja: %d; Vjezbe: %d; Semninar: %d ", uk_P,uk_V,uk_S );
+    printf("\t\nUkupno - Predavanja: %d; Vjezbe: %d; Semninar: %d ", uk_P,uk_V,uk_S );
 
 
 }
