@@ -17,9 +17,9 @@ typedef struct {
 
 float prosjek_izracun(int ukupno, int ocjena[]);
 
-void unos_vrijednosti(Student* pstudent,int broj_unosa);
+void unos_vrijednosti(Student polje_student[],int broj_unosa);
 
-void ispis_vrijednosti(Student* pstudent,int broj_unosa);
+void ispis_vrijednosti(const Student polje_pstudent[],int broj_unosa);
 
 
 
@@ -27,7 +27,7 @@ int main() {
 
     int unos;
 
-    Student student[MAX], * pstudent;
+    Student studenti[MAX];
 
     do {
         printf("\nUnesite kolicinu unosa (MAX 50): ");
@@ -35,11 +35,9 @@ int main() {
     } while (unos > MAX || unos < 1);
 
 
-    pstudent = &student[0];
-    unos_vrijednosti(pstudent, unos);
+    unos_vrijednosti(studenti, unos);
 
-    pstudent = &student[0];
-    ispis_vrijednosti(pstudent, unos);
+    ispis_vrijednosti(studenti, unos);
 
     return 0;
 }
@@ -58,44 +56,44 @@ float prosjek_izracun(int ukupno, int ocjena[]) {
 
 
 
-void unos_vrijednosti(Student* pstudent, int broj_unosa) {
+void unos_vrijednosti(Student polje_student[], int broj_unosa) {
 
     for (int i = 0; i < broj_unosa; i++) {
         printf("\n\nUnesite Ime  %d. studenta: ", i + 1);
-        scanf("%20s", pstudent->ime);
+        scanf("%20s", polje_student[i].ime);
         printf("\nUnesite Prezime  %d. studenta: ", i + 1);
-        scanf("%20s", pstudent->prezime);
+        scanf("%20s", polje_student[i].prezime);
 
         printf("\nUnesite JMBAG %d. studenta: ", i + 1);
-        scanf("%u", &pstudent->jmbag);
+        scanf("%u", &polje_student[i].jmbag);
 
         printf("\nUnesite Godinu rodenja %d. studenta: ", i + 1);
-        scanf("%d", &pstudent->god_rod);
+        scanf("%d", &polje_student[i].god_rod);
 
         printf("\nUnesite ukupni broj ocjena %d. studenta: ", i + 1);
-        scanf("%d", &pstudent->br_ocjena);
+        scanf("%d", &polje_student[i].br_ocjena);
 
 
-        for (int j = 0; j < pstudent->br_ocjena; j++) {
+        for (int j = 0; j < polje_student[i].br_ocjena; j++) {
             printf("\n Unesite ocjenu za %d predmet: ", j + 1);
-            scanf("%d", &pstudent->ocjene[j]);
+            scanf("%d", &polje_student[i].ocjene[j]);
         }
 
-        pstudent->prosjek = prosjek_izracun(pstudent->br_ocjena, pstudent->ocjene);
+        polje_student[i].prosjek = prosjek_izracun(polje_student[i].br_ocjena, polje_student[i].ocjene);
 
     }
-    pstudent++;
+
 }
 
 
 
 
 
-void ispis_vrijednosti(Student* pstudent, int broj_unosa) {
+void ispis_vrijednosti(const Student polje_student[], int broj_unosa) {
 
     for (int i = 0; i < broj_unosa; i++) {
-        printf("\n %d. Student: \n\t Ime i prezime: %s %s \n\t JMBAG: %d \n\t Godiste: %d \n\t Ocjenjeno %d predmeta \n\t Prosjek ocjena: %.2f \n", i + 1, pstudent->ime, pstudent->prezime, pstudent->jmbag, pstudent->god_rod, pstudent->br_ocjena, pstudent->prosjek);
-    pstudent++;
+        printf("\n %d. Student: \n\t Ime i prezime: %s %s \n\t JMBAG: %d \n\t Godiste: %d \n\t Ocjenjeno %d predmeta \n\t Prosjek ocjena: %.2f \n", i + 1, polje_student[i].ime, polje_student[i].prezime, polje_student[i].jmbag, polje_student[i].god_rod, polje_student[i].br_ocjena, polje_student[i].prosjek);
+
     }
 
 
