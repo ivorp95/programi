@@ -51,10 +51,10 @@ int main() {
         printf("\t\nUnesite vrstu sata ( P , V , ili S ) : ");
         scanf(" %c", &nastava_unos.vrsta);
 
-            if (nastava_unos.vrsta != 'P' || nastava_unos.vrsta != 'V' || nastava_unos.vrsta != 'S')
+            if (nastava_unos.vrsta != 'P' && nastava_unos.vrsta != 'V' && nastava_unos.vrsta != 'S')
             printf("\t\nunesite ( P , V , ili S )");
 
-        } while (nastava_unos.vrsta != 'P' || nastava_unos.vrsta != 'V' || nastava_unos.vrsta != 'S');
+        } while (nastava_unos.vrsta != 'P' && nastava_unos.vrsta != 'V' && nastava_unos.vrsta != 'S');
 
 
         do {
@@ -67,10 +67,10 @@ int main() {
         } while (nastava_unos.broj_sati <= 0);
 
         ubaci(nastava_unos, i, &lista_nastave);
-
-        ispisi(&lista_nastave);
     }
 
+    ispisi(&lista_nastave);
+    
     return 0;
 }
 
@@ -101,16 +101,16 @@ void ispisi(Lista* plista){
     for (i = 0; i <= plista->iZadnji; i++){
         printf("\n\t Datum: %s ", plista->elementi[i].datum);
         printf("\n\t vrsta: %c ", plista->elementi[i].vrsta);
-        printf("\n\t dob: %d ", plista->elementi[i].broj_sati);
+        printf("\n\t Sati: %d ", plista->elementi[i].broj_sati);
+
+        if (plista->elementi[i].vrsta == 'P')
+            uk_P += plista->elementi[i].broj_sati;
+        if (plista->elementi[i].vrsta == 'V')
+            uk_V += plista->elementi[i].broj_sati;
+        if (plista->elementi[i].vrsta == 'S')
+            uk_S += plista->elementi[i].broj_sati;
     }
-
-    if (plista->elementi[i].vrsta == 'P')
-        uk_P += plista->elementi[i].broj_sati;
-    if (plista->elementi[i].vrsta == 'V')
-        uk_V += plista->elementi[i].broj_sati;
-    if (plista->elementi[i].vrsta == 'S')
-        uk_S += plista->elementi[i].broj_sati;
-
+    
     printf("\t\nUkupno - Predavanja: %d; Vjezbe: %d; Semninar: %d ", uk_P,uk_V,uk_S );
 
 
