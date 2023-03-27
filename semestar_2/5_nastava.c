@@ -40,7 +40,7 @@ int main() {
     printf("\n\tKoliko termina nastave je odrzano:");
     scanf("%d", &broj_tremina);
 
-    for (i = 0; i <= broj_tremina; i++) {
+    for (i = 0; i < broj_tremina; i++) {
 
         printf("\n\t Unesite datum: ");
         scanf("%20s", nastava_unos.datum);
@@ -110,7 +110,7 @@ void ispisi(Lista* plista){
         if (plista->elementi[i].vrsta == 'S')
             uk_S += plista->elementi[i].broj_sati;
     }
-    
+
     printf("\t\nUkupno - Predavanja: %d; Vjezbe: %d; Semninar: %d ", uk_P,uk_V,uk_S );
 
 
