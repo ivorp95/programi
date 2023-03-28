@@ -60,9 +60,8 @@ int main() {
 
 
     check_numbers(&list_interval, lower, upper);
-
-
-   // output(&list_interval);
+    
+    output(&list_interval);
     
     return 0;
 }
@@ -86,29 +85,14 @@ void input(Interval new_element, int i_input, List* plist){
     }
 }
 
-/*
+
 void output(List* plist){
     int i;
-    int uk_P = 0, uk_V = 0, uk_S = 0;
 
-    for (i = 0; i <= plista->iZadnji; i++){
-        printf("\n\t Datum: %s ", plista->elementi[i].datum);
-        printf("\n\t vrsta: %c ", plista->elementi[i].vrsta);
-        printf("\n\t Sati: %d ", plista->elementi[i].broj_sati);
-
-        if (plista->elementi[i].vrsta == 'P')
-            uk_P += plista->elementi[i].broj_sati;
-        if (plista->elementi[i].vrsta == 'V')
-            uk_V += plista->elementi[i].broj_sati;
-        if (plista->elementi[i].vrsta == 'S')
-            uk_S += plista->elementi[i].broj_sati;
-    }
-
-    printf("\t\nUkupno - Predavanja: %d; Vjezbe: %d; Semninar: %d ", uk_P,uk_V,uk_S );
-
-
+    for (i = 0; i <= plist->i_last; i++)
+        printf("\n\t %d \t %c", plist->elements[i].number, plist->elements[i].rate);
 }
-*/
+
 
 void check_numbers(List* plist, int low_limit, int up_limit){
     int i;
