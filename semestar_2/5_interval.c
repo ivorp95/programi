@@ -31,7 +31,7 @@ int main() {
     Interval input_num;
 
     do{
-        printf("\n\thow many numbers will be in the list:");
+        printf("\n\thow many numbers will be in the list: ");
         scanf("%d", &range_num);
             if(range_num>MAX || range_num<=0)
             printf("must be in the range 1 - 20");
@@ -60,7 +60,7 @@ int main() {
 
 
     check_numbers(&list_interval, lower, upper);
-    
+
     output(&list_interval);
     
     return 0;
@@ -86,13 +86,6 @@ void input(Interval new_element, int i_input, List* plist){
 }
 
 
-void output(List* plist){
-    int i;
-
-    for (i = 0; i <= plist->i_last; i++)
-        printf("\n\t %d \t %c", plist->elements[i].number, plist->elements[i].rate);
-}
-
 
 void check_numbers(List* plist, int low_limit, int up_limit){
     int i;
@@ -103,12 +96,18 @@ void check_numbers(List* plist, int low_limit, int up_limit){
             plist->elements->rate= '>';
         else
             plist->elements->rate= '<';
-    
+
     }
 
 }
 
 
 
+void output(List* plist){
+    int i;
+
+    for (i = 0; i <= plist->i_last; i++)
+        printf("\n\t %d \t %c", plist->elements[i].number, plist->elements[i].rate);
+}
 
 
