@@ -59,7 +59,7 @@ int main() {
 
     check_numbers(&list_interval, lower, upper);
     
-    printf("\n\tnumbers in the range %d and %d and their ratio ( =  <   > )",lower, upper);
+    printf("\n\tnumber        [ %d , %d ] ratio ( =  <   > )",lower, upper);
     output(&list_interval);
     
     return 0;
@@ -105,6 +105,6 @@ void check_numbers(List* plist, int low_limit, int up_limit){
 void output(List* plist){
     int i;
     for (i = 0; i <= plist->i_last; i++)
-        printf("\n\t %d \t %c \n", plist->elements[i].number, plist->elements[i].rate);
+        printf("\n\t %4d \t\t %c \n", plist->elements[i].number, plist->elements[i].rate);
 }
 
