@@ -43,7 +43,6 @@ int main() {
         printf("\n\t enter the %d. number: ",i+1);
         scanf("%d", &input_num.number);
 
-        //scanf("%c", &enter, 1);
         input(input_num, i, &list_interval);
     }
 
@@ -58,9 +57,8 @@ int main() {
             printf("\nlower limit must be less than upper");
     }while(lower>=upper);
 
-
     check_numbers(&list_interval, lower, upper);
-
+    
     output(&list_interval);
     
     return 0;
@@ -96,7 +94,6 @@ void check_numbers(List* plist, int low_limit, int up_limit){
             plist->elements->rate= '>';
         else
             plist->elements->rate= '<';
-
     }
 
 }
@@ -109,5 +106,4 @@ void output(List* plist){
     for (i = 0; i <= plist->i_last; i++)
         printf("\n\t %d \t %c", plist->elements[i].number, plist->elements[i].rate);
 }
-
 
