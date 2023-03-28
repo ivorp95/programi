@@ -59,6 +59,8 @@ int main() {
     }while(lower>=upper);
 
 
+    check_numbers(&list_interval, lower, upper);
+
 
    // output(&list_interval);
     
