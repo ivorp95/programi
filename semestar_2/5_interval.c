@@ -54,11 +54,12 @@ int main() {
         scanf("%d", &upper);
 
             if(lower>=upper)
-            printf("\nlower limit must be less than upper");
+            printf("\n\tlower limit must be less than upper");
     }while(lower>=upper);
 
     check_numbers(&list_interval, lower, upper);
     
+    printf("\n\tnumbers in the range %d and %d and their ratio ( =  <   > )",lower, upper);
     output(&list_interval);
     
     return 0;
@@ -88,12 +89,13 @@ void input(Interval new_element, int i_input, List* plist){
 void check_numbers(List* plist, int low_limit, int up_limit){
     int i;
     for(i=0;i<=plist->i_last;i++){
-        if(plist->elements->number >= low_limit && plist->elements->number<=up_limit)
-            plist->elements->rate= '=';
-        else if(plist->elements->number>up_limit)
-            plist->elements->rate= '>';
+
+        if(plist->elements[i].number >= low_limit && plist->elements[i].number<=up_limit)
+            plist->elements[i].rate= '=';
+        else if(plist->elements[i].number>up_limit)
+            plist->elements[i].rate= '>';
         else
-            plist->elements->rate= '<';
+            plist->elements[i].rate= '<';
     }
 
 }
@@ -102,8 +104,7 @@ void check_numbers(List* plist, int low_limit, int up_limit){
 
 void output(List* plist){
     int i;
-
     for (i = 0; i <= plist->i_last; i++)
-        printf("\n\t %d \t %c", plist->elements[i].number, plist->elements[i].rate);
+        printf("\n\t %d \t %c \n", plist->elements[i].number, plist->elements[i].rate);
 }
 
