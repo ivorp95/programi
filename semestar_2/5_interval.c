@@ -4,9 +4,9 @@
 
 
 
-typedef struct{ 
+typedef struct{
+    int number; 
     char rate;
-    int number;
 } Interval;
 
 
@@ -33,9 +33,9 @@ int main() {
     do{
         printf("\n\thow many numbers will be in the list:");
         scanf("%d", &range_num);
-            if(range_num>MAX && range_num<=0)
-            printf("must be in the range 0 - 20");
-    }while(range_num>MAX && range_num<=0);
+            if(range_num>MAX || range_num<=0)
+            printf("must be in the range 1 - 20");
+    }while(range_num>MAX || range_num<=0);
 
 
     for (i = 0; i < range_num; i++) {
@@ -60,7 +60,7 @@ int main() {
 
 
 
-    output(&list_interval);
+   // output(&list_interval);
     
     return 0;
 }
@@ -84,7 +84,7 @@ void input(Interval new_element, int i_input, List* plist){
     }
 }
 
-
+/*
 void output(List* plist){
     int i;
     int uk_P = 0, uk_V = 0, uk_S = 0;
@@ -106,12 +106,19 @@ void output(List* plist){
 
 
 }
-
+*/
 
 void check_numbers(List* plist, int low_limit, int up_limit){
-
-
-
+    int i;
+    for(i=0;i<=plist->i_last;i++){
+        if(plist->elements->number >= low_limit && plist->elements->number<=up_limit)
+            plist->elements->rate= '=';
+        else if(plist->elements->number>up_limit)
+            plist->elements->rate= '>';
+        else
+            plist->elements->rate= '<';
+    
+    }
 
 }
 
