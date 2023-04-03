@@ -57,8 +57,7 @@ int main() {
 	for (i = pocetak; i >= kraj; i--) {
 
 		broj_unos.x = i;
-
-		ubaci(broj_unos, ppolazna_celija);
+		ubaci(broj_unos, ppolazna_celija=pronadjiZadnju(ppolazna_celija->psljedeca));
 	}
 	return 0;
 }
