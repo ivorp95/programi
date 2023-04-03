@@ -59,7 +59,7 @@ int main() {
 
     check_numbers(&list_interval, lower, upper);
     
-    printf("\n\tnumber        [ %d , %d ] ratio ( =  <   > )",lower, upper);
+    printf("\n\tnumber        [ %d , %d ] ratio ( =  <   > )   \n",lower, upper);
     output(&list_interval);
     
     return 0;
