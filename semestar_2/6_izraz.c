@@ -43,10 +43,10 @@ int main() {
 
 	do {
 		printf("\n Unesi pocetak: ");
-		scanf_s("%d", &pocetak);
+		scanf("%d", &pocetak);
 
 		printf("\n Unesi kraj: ");
-		scanf_s("%d", &kraj);
+		scanf("%d", &kraj);
 		razlika = pocetak - kraj;
 
 		if (pocetak < kraj && razlika > 10) {
@@ -60,9 +60,6 @@ int main() {
 
 		ubaci(broj_unos, ppolazna_celija);
 	}
-
-	
-
 	return 0;
 }
 
