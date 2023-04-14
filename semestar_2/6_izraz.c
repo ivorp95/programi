@@ -31,6 +31,8 @@ void ubaci(Broj noviElement, CelijaBroj* pcelija);
 
 CelijaBroj* pronadjiZadnju(CelijaBroj* ppolaznaCelija);
 
+void ispisi(CelijaBroj* ppolaznaCelija);
+
 
 
 int main() {
@@ -59,6 +61,7 @@ int main() {
 		broj_unos.x = i;
 		ubaci(broj_unos, ppolazna_celija=pronadjiZadnju(ppolazna_celija->psljedeca));
 	}
+	
 	return 0;
 }
 
@@ -81,6 +84,31 @@ CelijaBroj* pronadjiZadnju(CelijaBroj* ppolaznaCelija) {
 		pzadnjaCelija = pzadnjaCelija->psljedeca;
 
 	return pzadnjaCelija;
+}
+
+
+
+void ispisi(CelijaBroj* ppolaznaCelija)
+{
+	CelijaBroj* ptrenutnaCelija = ppolaznaCelija;
+	int el = 0;
+
+	printf("\n\n POLAZNA CELIJA (adresa celije: %p)", ptrenutnaCelija);
+	printf("\n\t   element: - ");
+	printf("\n\t psljedeca: %p ", ptrenutnaCelija->psljedeca);
+
+	while (ptrenutnaCelija->psljedeca != NULL)
+	{
+		ptrenutnaCelija = ptrenutnaCelija->psljedeca;
+		el++;
+
+		printf("\n\n\n %d. CELIJA (adresa celije: %p)", el, ptrenutnaCelija);
+		printf("\n\t   element: ");
+		printf("\n\t\t       x: %d ", ptrenutnaCelija->element.x);
+		printf("\n\t\t   vrsta: %d ", ptrenutnaCelija->element.izraz1);
+		printf("\n\t\t     dob: %d ", ptrenutnaCelija->element.izraz2);
+		printf("\n\t psljedeca: %p ", ptrenutnaCelija->psljedeca);
+	}
 }
 
 /*
