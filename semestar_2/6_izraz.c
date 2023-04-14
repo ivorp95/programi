@@ -21,7 +21,6 @@ CelijaLjubimac* pronadjiZadnju(CelijaLjubimac* ppolaznaCelija);
 CelijaLjubimac* pronadjiAdresu_element(KucniLjubimac element, CelijaLjubimac* ppolaznaCelija);
 CelijaLjubimac* pronadjiAdresu_pozicija(int pozicija, CelijaLjubimac* ppolaznaCelija);
 
-
 void ispisi(CelijaLjubimac* ppolaznaCelija);
 void obrisi(CelijaLjubimac* pcelija);
 void izmijeni(KucniLjubimac izmijenjeniElement, CelijaLjubimac* pcelijaZaIzmjenu);
@@ -61,9 +60,14 @@ int main() {
 		broj_unos.x = i;
 		ubaci(broj_unos, ppolazna_celija=pronadjiZadnju(ppolazna_celija->psljedeca));
 	}
+
+	ispisi(ppolazna_celija->psljedeca);
 	
 	return 0;
 }
+
+
+
 
 void ubaci(Broj noviElement, CelijaBroj* pcelija){
 
