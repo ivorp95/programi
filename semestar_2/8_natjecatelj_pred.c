@@ -54,7 +54,7 @@ int main() {
 		ubaci(natjecatelj, &red_natjecatelja);
 
 		printf("\n\n Zelite li unijeti podatke za novog natjecatelja? (D/N) ");
-		scanf_s(" %c", &noviUnos, 1);
+		scanf(" %c", &noviUnos);
 	} while (noviUnos == 'D');
 
 	ispisi(&red_natjecatelja);
@@ -81,11 +81,11 @@ int main() {
 void unosNatjecatelja(Natjecatelj* pnatjecatelj)
 {
 	printf("\n Unesite ime natjecatelja: ");
-	scanf_s("%20s", pnatjecatelj->ime, 21);
+	scanf("%20s", pnatjecatelj->ime);
 
 	do {
 		printf(" Unesite spol natjecatelja: ");
-		scanf_s(" %c", &pnatjecatelj->spol, 1);
+		scanf(" %c", &pnatjecatelj->spol);
 
 		if (pnatjecatelj->spol != 'Z' && pnatjecatelj->spol != 'M')
 			printf("\t Spol treba biti Z ili M.\n");
@@ -93,7 +93,7 @@ void unosNatjecatelja(Natjecatelj* pnatjecatelj)
 
 	do {
 		printf(" Unesite godinu rodjenja natjecatelja: ");
-		scanf_s("%d", &pnatjecatelj->godRodj);
+		scanf("%d", &pnatjecatelj->godRodj);
 
 		if (pnatjecatelj->godRodj < 1930 || pnatjecatelj->godRodj > 2005)
 			printf("\t Godina rodjenja treba biti u intervalu od 1930 do 2005.\n");
@@ -162,7 +162,7 @@ void izmijeni(Natjecatelj izmijenjeniElement, Natjecatelj originalniElement, Red
 		ptrenutnaCelija = ptrenutnaCelija->psljedeca;
 
 		if (strcmp(ptrenutnaCelija->element.ime, originalniElement.ime) == 0 &&
-			strcmp(ptrenutnaCelija->element.spol, originalniElement.spol) == 0 &&
+			ptrenutnaCelija->element.spol == originalniElement.spol &&
 			ptrenutnaCelija->element.godRodj == originalniElement.godRodj)
 		{
 			ptrenutnaCelija->element = izmijenjeniElement;
