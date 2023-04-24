@@ -55,7 +55,7 @@ int main() {
 
 		printf("\n\n Zelite li unijeti podatke za novog natjecatelja? (D/N) ");
 		scanf(" %c", &noviUnos);
-	} while (noviUnos == 'D');
+	} while (noviUnos == 'D' || noviUnos== 'd');
 
 	ispisi(&red_natjecatelja);
 	printf("\n\n");
@@ -67,9 +67,6 @@ int main() {
 
 	obrisi(&red_natjecatelja);
 	printf("\n\n\n\n ... Ispis celija reda nakon 2. brisanja elementa ... ");
-	ispisi(&red_natjecatelja);
-
-
 	ispisi(&red_natjecatelja);
 	
 	printf("\n\n");
