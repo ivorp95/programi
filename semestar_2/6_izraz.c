@@ -16,6 +16,7 @@ typedef struct Celija {
 } CelijaBroj;
 
 
+
 /*
 CelijaLjubimac* pronadjiZadnju(CelijaLjubimac* ppolaznaCelija);
 CelijaLjubimac* pronadjiAdresu_element(KucniLjubimac element, CelijaLjubimac* ppolaznaCelija);
@@ -113,6 +114,7 @@ void izracunajIzraze(CelijaBroj* ppolaznaCelija) {
 
 	}
 }
+
 
 int izracunajIzraz1(int x) {
 	int izraz1;
