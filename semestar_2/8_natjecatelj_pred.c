@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 #include<math.h>
-#include<malloc.h>
+#include<stdlib.h>
 
 
 typedef struct
@@ -39,7 +39,7 @@ int main() {
 	RedNatjecatelj red_natjecatelja;
 	red_natjecatelja.pulaz =(CelijaNatjecatelj*)malloc(sizeof(CelijaNatjecatelj));
 	red_natjecatelja.pulaz->psljedeca = NULL;
-	red_natjecatelja.pizlaz = mojiLjubimci.pulaz;
+	red_natjecatelja.pizlaz = red_natjecatelja.pulaz;
 
 	Natjecatelj natjecatelj;
 
