@@ -36,12 +36,58 @@ void ispis(Red *pokRed){
  }
 }
 
+void uvjetovan_ispis_broj(Red *pokRed){
+ int index, ocjena; 
+
+  printf("\n\nISPIS PO BROJNOJ OCJENI : \n");
+  printf("\n\n DO KOJE OCIJENE ZELITE ISPISATI : \n");
+  scanf(" %d", &ocjena);
+
+  index = (pokRed->izlaz+1) %MAX;
+  while(index != (pokRed->ulaz+1)%MAX){
+
+	if (pokRed->elementi[index].brojcana <=ocjena){
+ 	 printf("%d ",pokRed->elementi[index].brojcana);
+  	 printf("%c ",pokRed->elementi[index].slovna);
+     printf("\n");
+  }
+  index = (index + 1) %MAX;
+ }
+}
+
 
 void obrisi(Red *pokRed){
  if (pokRed->izlaz == pokRed->ulaz)  
   printf("Red je prazan");
  else pokRed->izlaz = (pokRed->izlaz+1)%MAX;
 }
+
+
+int brojac_elemenata(Red *pokRed){
+	int i;
+	float suma=0;
+	i = (pokRed->izlaz+1) %MAX;
+	  while(i != (pokRed->ulaz+1)%MAX){
+		suma++;
+		i= (i+1)%MAX;
+	}
+	return suma;
+}
+
+void prosjecna_ocjena(Red *pokRed){
+	int i, broj_ocjena;
+	float suma=0, prosjek;
+	i = (pokRed->izlaz+1) %MAX;
+	  while(i != (pokRed->ulaz+1)%MAX){
+		suma+= pokRed->elementi[i].brojcana;
+		i= (i+1)%MAX;
+	}
+	broj_ocjena=brojac_elemenata(pokRed);
+	prosjek=suma/broj_ocjena;
+	printf("%.2f ",prosjek);
+}
+
+
 
 
 int main() {
@@ -82,6 +128,10 @@ int main() {
 		ubaci(korisnickiUnos, &mojRed);
 	}
 	ispis(&mojRed);
+
+	prosjecna_ocjena(&mojRed);
+
+	uvjetovan_ispis_broj(&mojRed);
 
 	/*
 	do {
