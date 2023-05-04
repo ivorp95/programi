@@ -13,6 +13,84 @@ typedef struct{
  int ulaz;
 } Red;
 
+void ubaci(Ocjena x, Red *pokRed);
+void ispis(Red *pokRed);
+void uvjetovan_ispis_broj(Red *pokRed);
+void obrisi(Red *pokRed);
+int brojac_elemenata(Red *pokRed);
+void prosjecna_ocjena(Red *pokRed);
+
+
+
+int main() {
+	Ocjena korisnickiUnos;
+	int ocjenaZaBrisanje;
+
+	Red mojRed;
+	mojRed.izlaz = mojRed.ulaz = 0;
+
+
+	int i;
+	for (i = 0; i < 5; i++) {
+		do {
+			printf("Unesi brojcanu ocjenu: ");
+			scanf("%d", &korisnickiUnos.brojcana);
+			if (korisnickiUnos.brojcana < 0 || korisnickiUnos.brojcana > 5) {
+				printf("Brojcana ocjena treba biti unutar intervala 0-5!\n");
+			}
+			else {
+				break;
+			}
+		} while (1 == 1);
+		
+		do {
+			printf("Unesi slovnu ocjenu: ");
+			scanf(" %c", &korisnickiUnos.slovna);
+			if (korisnickiUnos.slovna != 'A' && korisnickiUnos.slovna != 'B' &&
+				korisnickiUnos.slovna != 'C' && korisnickiUnos.slovna != 'D' &&
+				korisnickiUnos.slovna != 'E' && korisnickiUnos.slovna != 'F') {
+				printf("Slovna ocjena treba biti A, B, C, D, E ili F!\n");
+			}
+			else {
+				break;
+			}
+
+		} while (1 == 1);
+		
+		ubaci(korisnickiUnos, &mojRed);
+	}
+	ispis(&mojRed);
+
+	prosjecna_ocjena(&mojRed);
+
+	uvjetovan_ispis_broj(&mojRed);
+
+	/*
+	do {
+		printf("\n\nUnesite brojcanu ocjenu do koje brisete elemente liste: ");
+		scanf("%d", &ocjenaZaBrisanje);
+		if (ocjenaZaBrisanje < 0 || ocjenaZaBrisanje > 5) {
+			printf("Brojcana ocjena treba biti unutar intervala 0-5!\n");
+		}
+		else {
+			break;
+		}
+	} while (1 == 1);
+	
+
+	for (i = 0; i <= mojRed.ulaz; i++) {
+		if (mojRed.elementi[i].brojcana <= ocjenaZaBrisanje) {
+			obrisi(&mojRed);
+			i = i - 1;
+		}
+	}
+	ispis(&mojRed);
+*/
+	return 0;
+}
+
+
+
 void ubaci(Ocjena x, Red *pokRed) {
  if ((pokRed->ulaz+1)%MAX == pokRed-> izlaz)
   printf("Red je pun");
@@ -85,74 +163,4 @@ void prosjecna_ocjena(Red *pokRed){
 	broj_ocjena=brojac_elemenata(pokRed);
 	prosjek=suma/broj_ocjena;
 	printf("%.2f ",prosjek);
-}
-
-
-
-
-int main() {
-	Ocjena korisnickiUnos;
-	int ocjenaZaBrisanje;
-
-	Red mojRed;
-	mojRed.izlaz = mojRed.ulaz = 0;
-
-
-	int i;
-	for (i = 0; i < 5; i++) {
-		do {
-			printf("Unesi brojcanu ocjenu: ");
-			scanf("%d", &korisnickiUnos.brojcana);
-			if (korisnickiUnos.brojcana < 0 || korisnickiUnos.brojcana > 5) {
-				printf("Brojcana ocjena treba biti unutar intervala 0-5!\n");
-			}
-			else {
-				break;
-			}
-		} while (1 == 1);
-		
-		do {
-			printf("Unesi slovnu ocjenu: ");
-			scanf(" %c", &korisnickiUnos.slovna);
-			if (korisnickiUnos.slovna != 'A' && korisnickiUnos.slovna != 'B' &&
-				korisnickiUnos.slovna != 'C' && korisnickiUnos.slovna != 'D' &&
-				korisnickiUnos.slovna != 'E' && korisnickiUnos.slovna != 'F') {
-				printf("Slovna ocjena treba biti A, B, C, D, E ili F!\n");
-			}
-			else {
-				break;
-			}
-
-		} while (1 == 1);
-		
-		ubaci(korisnickiUnos, &mojRed);
-	}
-	ispis(&mojRed);
-
-	prosjecna_ocjena(&mojRed);
-
-	uvjetovan_ispis_broj(&mojRed);
-
-	/*
-	do {
-		printf("\n\nUnesite brojcanu ocjenu do koje brisete elemente liste: ");
-		scanf("%d", &ocjenaZaBrisanje);
-		if (ocjenaZaBrisanje < 0 || ocjenaZaBrisanje > 5) {
-			printf("Brojcana ocjena treba biti unutar intervala 0-5!\n");
-		}
-		else {
-			break;
-		}
-	} while (1 == 1);
-	
-
-	for (i = 0; i <= mojRed.ulaz; i++) {
-		if (mojRed.elementi[i].brojcana <= ocjenaZaBrisanje) {
-			obrisi(&mojRed);
-			i = i - 1;
-		}
-	}
-	ispis(&mojRed);
-*/
-	return 0;
 }
