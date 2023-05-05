@@ -34,20 +34,20 @@ int main()
 	do
 	{
 		printf("\n Koliko cijelih brojeva zelite unijeti? (max = %d) ", max);
-		scanf_s("%d", &brUnosa);
+		scanf("%d", &brUnosa);
 	} while (brUnosa < 1 || brUnosa > MAX);
 
 	for (i = 0; i < brUnosa; i++)
 	{
 		printf("\n Unesite %d. broj: ", i + 1);
-		scanf_s("%d", &interval.broj);
+		scanf("%d", &interval.broj);
 
 		ubaci(interval, &stogInterval);
 	}
 
 	do {
 		printf("\n\n Unesite donju i gornju granicu intervala (odvojene razmakom): ");
-		scanf_s("%d %d", &dg, &gg);
+		scanf("%d %d", &dg, &gg);
 
 		if (dg >= gg)
 			printf("\n\t Donja granica mora biti manja od gornje.");
@@ -122,7 +122,7 @@ void obrisi(Stog* pstog)
 void spremiUDatoteku(char* nazivDatoteke, Stog* pstog)
 {
 	FILE* pdatoteka;
-	fopen_s(&pdatoteka, nazivDatoteke, "wb");
+	fopen( nazivDatoteke, "wb");
 
 	if (pdatoteka == NULL)
 	{
@@ -139,7 +139,7 @@ void spremiUDatoteku(char* nazivDatoteke, Stog* pstog)
 void procitajIzDatoteke(char* nazivDatoteke, Stog* pstog)
 {
 	FILE* pdatoteka;
-	fopen_s(&pdatoteka, nazivDatoteke, "rb");
+	fopen(nazivDatoteke, "rb");
 
 	if (pdatoteka == NULL)
 	{
