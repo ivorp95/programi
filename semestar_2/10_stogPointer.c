@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<math.h>
-#include<malloc.h>
+#include<stdlib.h>
 
 typedef struct
 {
@@ -35,7 +35,7 @@ int main()
 
 	do {
 		printf("\n\n Unesite 2 cijela broja odvojena razmakom: ");
-		scanf_s("%d %d", &pocetak, &kraj);
+		scanf("%d %d", &pocetak, &kraj);
 
 		if (pocetak < kraj)
 			printf("\n\t Prvi broj treba biti veci od drugoga. ");
