@@ -56,27 +56,6 @@ celija = pokLista;
 return celija;
 }
 
-
-void ubaci (Dvorane novi_element, Lista *pozicija_ubacivanja) {
-Lista *privremeno;
-    privremeno = pozicija_ubacivanja->sljedeca;
-    pozicija_ubacivanja->sljedeca = (Lista*)  malloc(sizeof(Lista));
-    pozicija_ubacivanja->sljedeca->element = novi_element;
-    pozicija_ubacivanja->sljedeca->sljedeca=privremeno;
-}
-
-void ispis (Lista *lista) {
-Lista *celija;
-celija = lista;
-printf("\nIspis liste:\n");
-    while (celija->sljedeca!=NULL){
-    celija = celija->sljedeca;
-    printf("\n %s",celija->element.naziv_dvorane);
-    printf("\n %.2f",celija->element.temperatura);
-    printf("\n %.2f\n",celija->element.vlaga_zraka);
-    }
-}
-
 Lista *adresaCelije(Lista *lista, int pozicija) {
     Lista *celija;
 celija = lista;
@@ -90,6 +69,29 @@ while (celija->sljedeca!=NULL){
     }
 return celija;
 }
+
+
+void ubaci (Dvorane novi_element, Lista *pozicija_ubacivanja) {
+Lista *privremeno;
+    privremeno = pozicija_ubacivanja->sljedeca;
+    pozicija_ubacivanja->sljedeca = (Lista*)  malloc(sizeof(Lista));
+    pozicija_ubacivanja->sljedeca->element = novi_element;
+    pozicija_ubacivanja->sljedeca->sljedeca=privremeno;
+}
+
+
+void ispis (Lista *lista) {
+Lista *celija;
+celija = lista;
+printf("\nIspis liste:\n");
+    while (celija->sljedeca!=NULL){
+    celija = celija->sljedeca;
+    printf("\n %s",celija->element.naziv_dvorane);
+    printf("\n %.2f",celija->element.temperatura);
+    printf("\n %.2f\n",celija->element.vlaga_zraka);
+    }
+}
+
 
 void obrisi (Lista *pozicija_brisanja) {
 Lista *privremeno;
