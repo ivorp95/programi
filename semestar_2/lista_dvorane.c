@@ -5,6 +5,7 @@ typedef struct{
     char naziv_dvorane[21];
     float temperatura;
     float vlaga_zraka;
+    int thi;
 }   Dvorane;
 
 typedef struct Celija{
@@ -19,6 +20,7 @@ void ubaci (Dvorane novi_element, Lista *pozicija_ubacivanja);
 void ubaci2 (Dvorane novi_element,int pozicija_ubacivanja, Lista *lista);
 void ispis (Lista *lista);
 void obrisi (Lista *pozicija_brisanja);
+int thi_racun(Dvorane novi_element);
 
 int main() {
 Lista *mojaLista;
@@ -33,6 +35,7 @@ Dvorane moj_unos;
         scanf("%f", &moj_unos.temperatura);
         printf("Unesite Vlagu zraka %d. dvorane: ", i+1);
         scanf("%f", &moj_unos.vlaga_zraka);
+        moj_unos.thi=thi_racun(moj_unos);
 
         ubaci (moj_unos, zadnjaCelija(mojaLista));
     };
@@ -89,6 +92,7 @@ printf("\nIspis liste:\n");
     printf("\n %s",celija->element.naziv_dvorane);
     printf("\n %.2f",celija->element.temperatura);
     printf("\n %.2f\n",celija->element.vlaga_zraka);
+    printf("\n %d\n",celija->element.thi);
     }
 }
 
@@ -128,4 +132,9 @@ else{
     else{
         printf("Pozicija ne postoji.");
         }
+}
+
+int thi_racun(Dvorane novi_element){
+    int thi=((1.8*novi_element.temperatura+32)-((0.55-0.0055*novi_element.vlaga_zraka)*(1.8*novi_element.temperatura-26)));
+    return thi;
 }
