@@ -1,12 +1,14 @@
 #include<stdio.h>
 
+// BUBBLE SORT ALGORITAM
+
 
 int main() {
 	int polje[8];
 	int i,j, temp, flag;
 	for (i = 0; i < 8; i++) {
 		printf("\n Unesi broj u polje[%d] = ", i);
-		scanf_s("%d", &polje[i]);
+		scanf("%d", &polje[i]);
 	}
 
 	for (i = 0; i < 8; i++) {
