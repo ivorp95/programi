@@ -136,3 +136,16 @@ int thi_racun(Dvorane novi_element){
     int thi=((1.8*novi_element.temperatura+32)-((0.55-0.0055*novi_element.vlaga_zraka)*(1.8*novi_element.temperatura-26)));
     return thi;
 }
+
+char thi_izraz(Dvorane novi_element){
+    int thi=((1.8*novi_element.temperatura+32)-((0.55-0.0055*novi_element.vlaga_zraka)*(1.8*novi_element.temperatura-26)));
+    char izraz[21];
+    if (0<thi && thi<71){
+        izraz[20]=("UGODNO\0");
+    } else if(72<thi && thi<79){
+        izraz="PODNOSLJIVO\0";
+    } else if(80<thi && thi<89){
+        izraz="NEUGODNO\0";
+    }
+    return izraz[20];
+}
