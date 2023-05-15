@@ -13,7 +13,7 @@ typedef struct {
 	Ocitanje elementi[MAX];
 } Lista;
 
-void ubaci(Ocitanje x, int pozicija_ubacivanja, Lista* pokLista);
+void ubaci(Ocitanje novi_element, int pozicija_ubacivanja, Lista* pokLista);
 void ispis(Lista* pokLista);
 
 int main() {
@@ -39,7 +39,7 @@ int main() {
 }
 
 
-void ubaci(Ocitanje x, int pozicija_ubacivanja, Lista* pokLista) {
+void ubaci(Ocitanje novi_element, int pozicija_ubacivanja, Lista* pokLista) {
 	int pozicija;
 	if (pokLista->zadnji >= MAX - 1)
 		printf("Lista je puna!");
@@ -49,7 +49,7 @@ void ubaci(Ocitanje x, int pozicija_ubacivanja, Lista* pokLista) {
 		for (pozicija = pokLista->zadnji; pozicija >= pozicija_ubacivanja; pozicija--)
 			pokLista->elementi[pozicija + 1] = pokLista->elementi[pozicija];
 		pokLista->zadnji++;
-		pokLista->elementi[pozicija_ubacivanja] = x;
+		pokLista->elementi[pozicija_ubacivanja] = novi_element;
 	}
 }
 

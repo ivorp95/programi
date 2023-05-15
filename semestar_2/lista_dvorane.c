@@ -15,8 +15,8 @@ typedef struct Celija{
 Lista *zadnjaCelija(Lista *pokLista);
 Lista *adresaCelije(Lista *lista, int pozicija);
 
-void ubaci (Dvorane x, Lista *pozicija_ubacivanja);
-void ubaci2 (Dvorane x,int pozicija_ubacivanja, Lista *lista);
+void ubaci (Dvorane novi_element, Lista *pozicija_ubacivanja);
+void ubaci2 (Dvorane novi_element,int pozicija_ubacivanja, Lista *lista);
 void ispis (Lista *lista);
 void obrisi (Lista *pozicija_brisanja);
 
@@ -57,11 +57,11 @@ return celija;
 }
 
 
-void ubaci (Dvorane x, Lista *pozicija_ubacivanja) {
+void ubaci (Dvorane novi_element, Lista *pozicija_ubacivanja) {
 Lista *privremeno;
     privremeno = pozicija_ubacivanja->sljedeca;
     pozicija_ubacivanja->sljedeca = (Lista*)  malloc(sizeof(Lista));
-    pozicija_ubacivanja->sljedeca->element = x;
+    pozicija_ubacivanja->sljedeca->element = novi_element;
     pozicija_ubacivanja->sljedeca->sljedeca=privremeno;
 }
 
@@ -98,7 +98,7 @@ pozicija_brisanja->sljedeca = pozicija_brisanja->sljedeca->sljedeca;
 free(privremeno);
 }
 
-void ubaci2 (Dvorane x,int pozicija_ubacivanja, Lista *lista) {
+void ubaci2 (Dvorane novi_element,int pozicija_ubacivanja, Lista *lista) {
 Lista *privremeno, *celija;
 celija=lista;
 int brojac=0;
@@ -120,7 +120,7 @@ else{
     if(pozicija_ispravna == 1){
         privremeno = celija->sljedeca;
         celija->sljedeca = (Lista*) malloc(sizeof(Lista)); 
-        celija->sljedeca->element = x;
+        celija->sljedeca->element = novi_element;
         celija->sljedeca->sljedeca = privremeno;
         }
     else{
