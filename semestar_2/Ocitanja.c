@@ -13,6 +13,32 @@ typedef struct {
 	Ocitanje elementi[MAX];
 } Lista;
 
+void ubaci(Ocitanje x, int pozicija_ubacivanja, Lista* pokLista);
+void ispis(Lista* pokLista);
+
+int main() {
+	Lista listaOcitanja;
+	Ocitanje korisnickoOcitanje;
+	listaOcitanja.zadnji = -1;
+
+	int brojOcitanja;
+	for (brojOcitanja = 1; brojOcitanja < 5; brojOcitanja++) {
+		printf("Ocitanje: %d", brojOcitanja);
+		printf("\nUnesite naziv dvorane: ");
+		scanf("%s", korisnickoOcitanje.nazivDvorane);
+		printf("Unesite temperaturu: ");
+		scanf("%f", &korisnickoOcitanje.temperatura);
+		printf("Unesite vlaznost zraka: ");
+		scanf("%f", &korisnickoOcitanje.vlaznostZraka);
+
+		ubaci(korisnickoOcitanje, listaOcitanja.zadnji + 1, &listaOcitanja);
+	}
+
+	ispis(&listaOcitanja);
+
+}
+
+
 void ubaci(Ocitanje x, int pozicija_ubacivanja, Lista* pokLista) {
 	int pozicija;
 	if (pokLista->zadnji >= MAX - 1)
@@ -36,27 +62,4 @@ void ispis(Lista* pokLista) {
 			pokLista->elementi[pozicija].temperatura,
 			pokLista->elementi[pozicija].vlaznostZraka);
 	}
-}
-
-
-int main() {
-	Lista listaOcitanja;
-	Ocitanje korisnickoOcitanje;
-	listaOcitanja.zadnji = -1;
-
-	int brojOcitanja;
-	for (brojOcitanja = 1; brojOcitanja < 5; brojOcitanja++) {
-		printf("Ocitanje: %d", brojOcitanja);
-		printf("\nUnesite naziv dvorane: ");
-		scanf("%s", korisnickoOcitanje.nazivDvorane);
-		printf("Unesite temperaturu: ");
-		scanf("%f", &korisnickoOcitanje.temperatura);
-		printf("Unesite vlaznost zraka: ");
-		scanf("%f", &korisnickoOcitanje.vlaznostZraka);
-
-		ubaci(korisnickoOcitanje, listaOcitanja.zadnji + 1, &listaOcitanja);
-	}
-
-	ispis(&listaOcitanja);
-
 }
