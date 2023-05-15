@@ -137,6 +137,7 @@ int thi_racun(Dvorane novi_element){
     return thi;
 }
 
+/*
 char thi_izraz(Dvorane novi_element){
     int thi=((1.8*novi_element.temperatura+32)-((0.55-0.0055*novi_element.vlaga_zraka)*(1.8*novi_element.temperatura-26)));
     char izraz[21];
@@ -149,3 +150,4 @@ char thi_izraz(Dvorane novi_element){
     }
     return izraz[20];
 }
+*/
