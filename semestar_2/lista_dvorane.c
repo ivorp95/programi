@@ -129,6 +129,7 @@ else{
         }
     else{
         printf("Pozicija ne postoji.");
+        printf(" ");
         }
 }
 
