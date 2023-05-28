@@ -178,6 +178,13 @@ void ubaci (TIP_PODATKA x,int pozicija_ubacivanja, Lista *lista) {
 POZIVI FUNKCIJE U MAIN-u
  
 ubaci (PODATAK_UBACIVANJA, POZICIJA_UBACIVANJA, mojaLista);
+
+
+
+
+
+
+
  
 RED PREKO POLJA
  
@@ -294,6 +301,10 @@ ubaci (unos, &mojRed);
 ispis (&mojRed);
 obrisi (&mojRed);
 
+
+
+
+
 STOG PREKO POLJA
  
 -DEFINICIJA MAKSIMALNE VELIČINE STOGA-
