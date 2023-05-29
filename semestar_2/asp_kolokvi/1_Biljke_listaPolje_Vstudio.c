@@ -30,15 +30,15 @@ int main() {
 	char vrsta[21];
 
 	printf("\n Koliko biljaka zelite unjeti (MAX 30) : ");
-	scanf_s("%d", &broj_unosa);
+	scanf("%d", &broj_unosa);
 
 	for (i = 0; i < broj_unosa;i++) {
 		printf("\n\n\n Unesite naziv %d. biljke: ", i+1);
-		scanf_s(" %20s", unos.vrsta, 21);
+		scanf(" %20s", unos.vrsta, 21);
 
 		do {
 			printf("\n Unesite Period Vegetacije %d. biljke: ", i + 1);
-			scanf_s(" %c", &unos.periodVegetacije,1);
+			scanf(" %c", &unos.periodVegetacije,1);
 
 			if (unos.periodVegetacije != 'T' && unos.periodVegetacije != 'J' && unos.periodVegetacije != 'D')
 				printf("\n Unos mora biti 'T' za Trajnice, 'J' za Jednogodisnje ili 'D' za Dvogodisnje");
@@ -47,7 +47,7 @@ int main() {
 
 		do {
 			printf("\n Unesite broj komada %d. biljke: ", i + 1);
-			scanf_s("%d", &unos.brojKomada);
+			scanf("%d", &unos.brojKomada);
 			
 			if (unos.brojKomada < 0)
 				printf("\n Broj komada mora biti pozitivan broj");
@@ -59,7 +59,7 @@ int main() {
 	}
 
 	printf("\n\n\n Koju biljku zelite pronaci: ");
-	scanf_s(" %20s", vrsta, 21);
+	scanf(" %20s", vrsta, 21);
 	pronadjiBiljku(vrsta, &mojaLista);
 
 
