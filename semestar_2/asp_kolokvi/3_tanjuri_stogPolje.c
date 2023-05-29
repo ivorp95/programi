@@ -33,15 +33,15 @@ int main() {
 	do {
 	printf("\n Unesite broj tanjura koji ce se spremiti u stog (max 20) : ");
 	scanf("%d", &broj_unosa);
-	if (broj_unosa < 1 || broj_unosa >20)
+	if (broj_unosa < 1 || broj_unosa >MAX)
 		printf("\n Broj unosa mora biti izmedu 1 i 20 ");
-	} while (broj_unosa < 1 || broj_unosa>20);
+	} while (broj_unosa < 1 || broj_unosa>MAX);
 
 	for (i = 0;i < broj_unosa; i++) {
 		printf("\n\n\n\n Unesite promjer %d. tanjura koji ce se spremiti u stog : ",i+1);
 		scanf("%f", &unos.promjer);
 		printf("\n Unesite boju %d. tanjura koji ce se spremiti u stog : ",i+1);
-		scanf("%20s", unos.boja,21);
+		scanf("%20s", unos.boja);
 		do {
 			printf("\n Unesite uzorak %d. tanjura koji ce se spremiti u stog 'D' ili 'N' : ", i + 1);
 			scanf(" %c", &unos.uzorak);
