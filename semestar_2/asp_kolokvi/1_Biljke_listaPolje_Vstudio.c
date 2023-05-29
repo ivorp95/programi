@@ -34,11 +34,11 @@ int main() {
 
 	for (i = 0; i < broj_unosa;i++) {
 		printf("\n\n\n Unesite naziv %d. biljke: ", i+1);
-		scanf(" %20s", unos.vrsta, 21);
+		scanf(" %20s", unos.vrsta);
 
 		do {
 			printf("\n Unesite Period Vegetacije %d. biljke: ", i + 1);
-			scanf(" %c", &unos.periodVegetacije,1);
+			scanf(" %c", &unos.periodVegetacije);
 
 			if (unos.periodVegetacije != 'T' && unos.periodVegetacije != 'J' && unos.periodVegetacije != 'D')
 				printf("\n Unos mora biti 'T' za Trajnice, 'J' za Jednogodisnje ili 'D' za Dvogodisnje");
@@ -59,7 +59,7 @@ int main() {
 	}
 
 	printf("\n\n\n Koju biljku zelite pronaci: ");
-	scanf(" %20s", vrsta, 21);
+	scanf(" %20s", vrsta);
 	pronadjiBiljku(vrsta, &mojaLista);
 
 
