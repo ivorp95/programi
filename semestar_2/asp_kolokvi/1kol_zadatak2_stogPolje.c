@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<malloc.h>
+#include<stdlib.h>
 #include<string.h>
 #define MAX 10
 
@@ -30,22 +30,22 @@ int main() {
 	for (i = 0; i < MAX;i++) {
 		printf("\n\n\n Unesite podatke za %d kutiju", i + 1);
 		printf("\n Visina: ");
-		scanf_s("%f", &unos.visina);
+		scanf("%f", &unos.visina);
 		printf("\n Tezina: ");
-		scanf_s("%d", &unos.tezina);
+		scanf("%d", &unos.tezina);
 
 		ubaci(unos, &mojStog);
 	
 
 		printf("\n Zelite li unjeti podatke za jos jednu Kutiju 'zelim': ");
-		scanf_s(" %s", odgovor, 10);
+		scanf(" %s", odgovor);
 
 		if (strcmp("zelim", odgovor) != 0)
 			break;
 	} ;
 
 	printf("\n Koliku ukupnu tezinu zelite ukloniti sa stoga? ");
-	scanf_s("%d", &tezinaUkloni);
+	scanf("%d", &tezinaUkloni);
 
 	do {
 		tezinaPovrat += obrisiKutiju(&mojStog);
@@ -72,7 +72,7 @@ void ispis(Stog* pokStog) {
 	printf("\nStog:\n");
 
 	for (indeks = pokStog->vrh; indeks <= MAX - 1; indeks++) {
-		printf("%", pokStog->elementi[indeks]);
+		printf("%d", pokStog->elementi[indeks].tezina);
 
 	}
 }

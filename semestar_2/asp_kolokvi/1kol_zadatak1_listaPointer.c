@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<malloc.h>
+#include<stdlib.h>
 #include<string.h>
 
 typedef struct {
@@ -34,29 +34,29 @@ int main() {
 	do {
 		printf("\n\n\n Unesite podatke za jednu olovku");
 		printf("\n Unesite proizvodjaca olovke: ");
-		scanf_s("%20s", unos.proizvodjac, 21);
+		scanf("%20s", unos.proizvodjac);
 
 		do {
 			printf("\n Unesite cijenu olovke: ");
-			scanf_s("%f", &unos.cijena);
+			scanf("%f", &unos.cijena);
 			if (unos.cijena <= 0)
 				printf("\n Cijena mora biti veca od 0");
 		} while (unos.cijena <= 0);
 
 		printf("\n Unesite tvrdocu olovke: ");
-		scanf_s("%2s", unos.tvrdoca,3);
+		scanf("%2s", unos.tvrdoca);
 
 		ubaci(unos,zadnjaCelija(mojaLista));
 
 		printf("\n Zelite li unjeti podatke za jos jednu olovku 'D' ili 'N': ");
-		scanf_s(" %c", &odgovor, 1);
+		scanf(" %c", &odgovor);
 
 	} while (odgovor == 'D');
 
 	ispisOlovke(mojaLista);
 
 	printf("\n Koju tvrdocu olovke zelite pronaci: ");
-	scanf_s(" %s", traziOlovku, 3);
+	scanf(" %s", traziOlovku);
 
 	brojOlovki = pronadjiTvrdocu(traziOlovku, mojaLista);
 
