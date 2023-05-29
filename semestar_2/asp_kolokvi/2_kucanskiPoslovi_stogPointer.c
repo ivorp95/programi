@@ -71,7 +71,7 @@ void ispis(Stog* pokStog) {
 	else {
 		printf("\nStog:\n");
 		while (celija != NULL) {
-			printf("\n%d", celija->element.vrsta);
+			printf("\n%d", celija->element.ocekivanoTrajanje);
 			celija = celija->sljedeca;
 		}
 	}
