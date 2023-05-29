@@ -84,8 +84,8 @@ int obrisiKutiju(Stog* pokStog) {
 		printf("Stog je prazan!");
 	else
 		printf("\n Uklonjeno je : %d kg.", pokStog->elementi[pokStog->vrh].tezina);
-		ukupnaTezina = pokStog->elementi[pokStog->vrh].tezina;
-		pokStog->vrh++;
+	ukupnaTezina = pokStog->elementi[pokStog->vrh].tezina;
+	pokStog->vrh++;
 
 
 	return ukupnaTezina;
