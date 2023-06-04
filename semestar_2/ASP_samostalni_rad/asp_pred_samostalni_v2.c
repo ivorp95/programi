@@ -43,21 +43,66 @@ int main (){
     char menu_opcija, submenu, enter;
 	
 	// PD unosi
-	strcpy(unos.nazivFilma,"Batman\n");
+	strcpy(unos.nazivFilma,"The Dark Knight\n");
 	strcpy(unos.directorImePrezime,"Cristopher Nolan\n");
-	unos.godina_izlaska=2001;
-	unos.trajanje=150;
+	unos.godina_izlaska=2008;
+	unos.trajanje=152;
 	ubaci(unos, &mojRed);
-	strcpy(unos.nazivFilma,"2001 a space odissey\n");
+	strcpy(unos.nazivFilma,"2001 a Space Odyssey\n");
 	strcpy(unos.directorImePrezime,"Stanley Kubrick\n");
-	unos.godina_izlaska=1965;
-	unos.trajanje=200;
+	unos.godina_izlaska=1968;
+	unos.trajanje=149;
 	ubaci(unos, &mojRed);
-
-
-
-
-
+	strcpy(unos.nazivFilma,"Gladiator\n");
+	strcpy(unos.directorImePrezime,"Ridley Scott\n");
+	unos.godina_izlaska=2000;
+	unos.trajanje=170;
+	ubaci(unos, &mojRed);
+	strcpy(unos.nazivFilma,"Joker\n");
+	strcpy(unos.directorImePrezime,"Todd Philips\n");
+	unos.godina_izlaska=2019;
+	unos.trajanje=122;
+	ubaci(unos, &mojRed);
+	strcpy(unos.nazivFilma,"A Clockwork Orange\n");
+	strcpy(unos.directorImePrezime,"Stanley Kubrick\n");
+	unos.godina_izlaska=1971;
+	unos.trajanje=137;
+	ubaci(unos, &mojRed);
+	strcpy(unos.nazivFilma,"Dr. Strangelove\n");
+	strcpy(unos.directorImePrezime,"Stanley Kubrick\n");
+	unos.godina_izlaska=1963;
+	unos.trajanje=95;
+	ubaci(unos, &mojRed);
+	strcpy(unos.nazivFilma,"Mad Max: Fury Road\n");
+	strcpy(unos.directorImePrezime,"George Miller\n");
+	unos.godina_izlaska=2015;
+	unos.trajanje=120;
+	ubaci(unos, &mojRed);
+	strcpy(unos.nazivFilma,"Watchmen\n");
+	strcpy(unos.directorImePrezime,"Zack Snyder\n");
+	unos.godina_izlaska=2009;
+	unos.trajanje=215;
+	ubaci(unos, &mojRed);
+	strcpy(unos.nazivFilma,"Blade Runner (The Final Cut)\n");
+	strcpy(unos.directorImePrezime,"Ridley Scott\n");
+	unos.godina_izlaska=1982;
+	unos.trajanje=119;
+	ubaci(unos, &mojRed);
+	strcpy(unos.nazivFilma,"The Lord of the Rings: The Fellowship of the Ring\n");
+	strcpy(unos.directorImePrezime,"Peter Jackson\n");
+	unos.godina_izlaska=2001;
+	unos.trajanje=178;
+	ubaci(unos, &mojRed);
+	strcpy(unos.nazivFilma,"The Lord of the Rings: The Two Towers\n");
+	strcpy(unos.directorImePrezime,"Peter Jackson\n");
+	unos.godina_izlaska=2002;
+	unos.trajanje=180;
+	ubaci(unos, &mojRed);
+	strcpy(unos.nazivFilma,"The Lord of the Rings: Return of the King\n");
+	strcpy(unos.directorImePrezime,"Peter Jackson\n");
+	unos.godina_izlaska=2003;
+	unos.trajanje=201;
+	ubaci(unos, &mojRed);
 
 
 
