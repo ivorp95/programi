@@ -153,6 +153,8 @@ void ubaci(Film x, RedFilmova *pokRed) {
  
 void ispisi(RedFilmova *pokRed) {
 	CelijaReda *celija;
+	if (pokRed->ulaz == pokRed->izlaz)   
+		printf("Red Filmova je prazan");
 	if (pokRed->izlaz != pokRed->ulaz){
 		celija = pokRed->izlaz;
 printf("\n\nIspis reda: \n\n");
