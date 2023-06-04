@@ -106,6 +106,16 @@ int main (){
 	unos.godina_izlaska=2000;
 	unos.trajanje=113;
 	ubaci(unos, &mojRed);
+	strcpy(unos.nazivFilma,"300\n");
+	strcpy(unos.directorImePrezime,"Zack Snyder\n");
+	unos.godina_izlaska=2006;
+	unos.trajanje=117;
+	ubaci(unos, &mojRed);
+	strcpy(unos.nazivFilma,"Inglorious Bastards\n");
+	strcpy(unos.directorImePrezime,"Quentin Tarantino\n");
+	unos.godina_izlaska=2009;
+	unos.trajanje=153;
+	ubaci(unos, &mojRed);
 //
 
 
@@ -121,10 +131,9 @@ int main (){
     printf("e. Pretraga podataka po Nazivu filma ili Imenu i Prezimenu redatelja.\n");
 	printf("f. Pretraga podataka po Godini izdavanja filma ili Trajanju filma u minutama.\n");
     printf("g. Zavrsetak programa.\n");
-    sleep(1);
+    sleep(1/2);
     printf("\nUnesite svoj odabir: ");
     scanf(" %c",&menu_opcija);
-	scanf(" %c",&enter);
 
         switch(menu_opcija){
 
@@ -207,19 +216,20 @@ int main (){
         case 'e':
 			while(1==1){
 				printf("\n\n\n a. Pretraga po Nazivu filma ");
-				printf("\n b. Pretraga po Imenu i prezimenu Redatelja");
+				printf("\n b. Pretraga po Imenu i Prezimenu Redatelja");
 				printf("\n c. za izlaz\n") ;
-				scanf("%c",&submenu);
-				scanf("%c",&enter);
+				scanf(" %c",&submenu);
 				switch (submenu) {
 				case 'a':
 				printf("\n Unesite Naziv filma po kojem zelite pretrazivati: ");
+				scanf("%c",&enter);
 				fgets(originalniElement.nazivFilma,51,stdin);
 				IspisNaziv(&mojRed, originalniElement);
 				break;
 
 				case 'b':
 				printf("\n Unesite Ime i Prezime redatelja filma po kojem zelite pretrazivati: ");
+				scanf("%c",&enter);
 				fgets(originalniElement.directorImePrezime,51,stdin);
 				IspisImePrezime(&mojRed, originalniElement);
 				break;
