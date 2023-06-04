@@ -30,16 +30,11 @@ void ubaci(Film noviElement, RedFilmova* pokRed);
 void ispisi(RedFilmova* pokRed);
 void obrisi(RedFilmova* pokRed);
 void izmijeni(Film izmijenjeniElement, Film originalniElement, RedFilmova* pokRed);
+
 void ispisGodineIzlaska(RedFilmova *pokRed, int godina);
 void ispisTrajanje(RedFilmova *pokRed, int dg, int gg);
 
-
 void binarnoPretrazivanje(RedFilmova* pokRed, char imeTrazi[], int dg, int gg);
-
-CelijaReda* pronadji_string(char* trazeni_string_podatak, RedFilmova* pokRed); //poo koojem parametru se pretrazuje. funkcija strcasecmp
-
-CelijaReda* pronadji_int(char* trazeni_int_podatak, RedFilmova* pokRed); //po kojem parametru. za trajanje treba interval
-
 
 int main (){
     Film unos, originalniElement, izmijenjeniElement;
@@ -154,6 +149,7 @@ int main (){
 					printf("\n Unesite gornju granicu: \n");
 					scanf(" %d",&gg);
 					ispisTrajanje(&mojRed,dg,gg);
+					break;
 				}
 
 			break;
