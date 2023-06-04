@@ -32,7 +32,7 @@ int main()
 	for (i = 0; i < MAX; i++)
 	{
 		printf("\n poljeChar[%d] = ", i);
-		scanf(" %c", &poljeChar[i], 1);
+		scanf(" %c", &poljeChar[i]);
 	}
 	bubbleChar(poljeChar, MAX);
 	
