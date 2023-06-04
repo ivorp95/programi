@@ -131,7 +131,7 @@ int main (){
     printf("e. Pretraga podataka po Nazivu filma ili Imenu i Prezimenu redatelja.\n");
 	printf("f. Pretraga podataka po Godini izdavanja filma ili Trajanju filma u minutama.\n");
     printf("g. Zavrsetak programa.\n");
-    sleep(1/2);
+    sleep(1);
     printf("\nUnesite svoj odabir: ");
     scanf(" %c",&menu_opcija);
 
