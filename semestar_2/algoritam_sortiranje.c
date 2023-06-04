@@ -15,26 +15,27 @@ int main()
 	int i;
 
 	
-	// sortiranje integera
+	/* sortiranje integera
 	for (i = 0; i < MAX; i++)
 	{
 		printf("\n poljeInt[%d] = ", i);
 		scanf("%d", &poljeInt[i]);
 	}
 	bubbleInt(poljeInt, MAX);
+	*/
 	//selectionInt(poljeInt, MAX);
 	//insertionInt(poljeInt, MAX);
 	
 
-	/*
+	
 	// sortiranje znakova
 	for (i = 0; i < MAX; i++)
 	{
 		printf("\n poljeChar[%d] = ", i);
-		scanf_s(" %c", &poljeChar[i], 1);
+		scanf(" %c", &poljeChar[i], 1);
 	}
 	bubbleChar(poljeChar, MAX);
-	*/
+	
 
 	printf("\n\n");
 }
