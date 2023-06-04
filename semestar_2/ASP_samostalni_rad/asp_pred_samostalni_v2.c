@@ -44,7 +44,7 @@ int main (){
     mojRed.izlaz=mojRed.ulaz= (CelijaReda*) malloc (sizeof(CelijaReda));
     char menu_opcija, submenu;
 
-    printf("\nProgram za unos filmova preko celija u strukturu reda, unose se podatci o:\nNazivu filma na engleskom, Prezimenu Redatelja, Imenu redatelja, Godini izdavanja filma, Trajanju filma u minutama.\n");
+    printf("\nProgram za unos filmova preko celija u strukturu reda, unose se podatci o:\nNazivu filma, Imenu i Prezimenu redatelja, \nGodini izdavanja filma, Trajanju filma u minutama.\n");
 
     do{
     sleep(1);
@@ -88,7 +88,8 @@ int main (){
             break;
 
         case 'd':
-			printf("\n\n\n a. za izmjenu po Nazivu filma\n");
+			printf("\n\n\n PODIZBORNIK ZA IZMJENU :\n");
+			printf("\n a. za izmjenu po Nazivu filma\n");
 			printf("\n b. za izmjenu po Imenu redatelja filma\n");
 			printf("\n c. za izmjenu po Prezimenu redatelja filma\n");
 			scanf(" %c", &submenu);
@@ -143,14 +144,14 @@ int main (){
 }
 
 
-void ubaci (Film x, RedFilmova *pokRed) {
+void ubaci(Film x, RedFilmova *pokRed) {
 	pokRed->ulaz->sljedeca = (CelijaReda*) malloc (sizeof(CelijaReda));
 	pokRed->ulaz = pokRed->ulaz->sljedeca;
 	pokRed->ulaz->elementi = x;
 	pokRed->ulaz->sljedeca = NULL;
 }
  
-void ispis (RedFilmova *pokRed) {
+void ispisi(RedFilmova *pokRed) {
 	CelijaReda *celija;
 	if (pokRed->izlaz != pokRed->ulaz){
 		celija = pokRed->izlaz;
@@ -165,7 +166,7 @@ printf("\n\nIspis reda: \n\n");
 	}	
 } 
  
-void obrisi (RedFilmova *pokRed) {
+void obrisi(RedFilmova *pokRed) {
 	CelijaReda *privremeno;
 	if (pokRed->ulaz == pokRed->izlaz)   
 		printf("Red Filmova je prazan");
