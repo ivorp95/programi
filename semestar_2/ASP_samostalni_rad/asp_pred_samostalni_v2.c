@@ -31,10 +31,10 @@ void obrisi(RedFilmova* pokRed);
 void izmijeni(Film izmijenjeniElement, Film originalniElement, RedFilmova* pokRed);
 
 void ispisGodineIzlaska(RedFilmova *pokRed, int godina);
+void ispisGodineInterval(RedFilmova *pokRed, int dg, int gg);
 void ispisTrajanje(RedFilmova *pokRed, int dg, int gg);
-
-void bubbleChar(RedFilmova *pokRed);
-void blokovskoPretrazivanje(RedFilmova* pokRed, char imeTrazi[], int velBloka);
+void IspisImePrezime(RedFilmova *pokRed, Film originalniElement);
+void IspisNaziv(RedFilmova *pokRed, Film originalniElement);
 
 int main (){
     Film unos, originalniElement, izmijenjeniElement;
@@ -42,7 +42,7 @@ int main (){
     mojRed.izlaz=mojRed.ulaz= (CelijaReda*) malloc (sizeof(CelijaReda));
     char menu_opcija, submenu, enter;
 	
-	// PD unosi
+// PD unosi
 	strcpy(unos.nazivFilma,"The Dark Knight\n");
 	strcpy(unos.directorImePrezime,"Cristopher Nolan\n");
 	unos.godina_izlaska=2008;
@@ -103,13 +103,13 @@ int main (){
 	unos.godina_izlaska=2003;
 	unos.trajanje=201;
 	ubaci(unos, &mojRed);
-
+//
 
 
     printf("\nProgram za unos filmova preko celija u strukturu reda, unose se podatci o:\nNazivu filma, Imenu i Prezimenu redatelja, \nGodini izdavanja filma, Trajanju filma u minutama.\n");
 
-    do{
-    sleep(1);
+    label:do{
+	
     printf("\n\n\n\n\nGLAVNI IZBORNIK:\n\n");
     sleep(1);
     printf("a. Unos podataka o novom filmu.\n");
@@ -150,10 +150,11 @@ int main (){
             break;
 
         case 'd':
-			//bubbleChar(&mojRed);
+			do{
 			printf("\n\n\n PODIZBORNIK ZA IZMJENU :\n");
 			printf("\n a. za izmjenu po Nazivu filma\n");
-			printf("\n b. za izmjenu po Imenu i Prezimenu redatelja filma\n");
+			printf("\n b. za izmjenu po Imenu i Prezimenu redatelja filma");
+			printf("\n c. za izlaz\n");
 			printf("\nUnesite svoj odabir: ");
 			scanf(" %c", &submenu);
 			scanf("%c",&enter);
@@ -168,11 +169,20 @@ int main (){
 					case 'b':
 			printf("\n Unesite Ime i Prezime redatelja filma koji zelite zamijeniti: ");
 			fgets(originalniElement.directorImePrezime,51,stdin);
+			IspisImePrezime(&mojRed, originalniElement);
+			scanf("%c",&enter);
+			printf("\n Unesite Naziv filma redatelja: %s koji zelite zamijeniti: ", originalniElement.directorImePrezime);
+			fgets(originalniElement.nazivFilma,51,stdin);
 			scanf("%c",&enter);
 					break;
-				}
 
-			printf("\n\n\nUnesite podatke o novom filmu koji ce zamjijeniti postojece\n");
+					case 'c':
+					goto label;
+					break;
+				} 
+			}while(submenu!='c');
+
+			printf("\n\n\n Unesite podatke o novom filmu koji ce zamjijeniti postojece\n");
 			printf("\n Naziv filma: ");
 			fgets(izmijenjeniElement.nazivFilma,51,stdin);
 			printf("\n Ime i Prezime Redatelja filma: ");
@@ -183,15 +193,43 @@ int main (){
 			scanf(" %d",&izmijenjeniElement.trajanje);
 
 			izmijeni(izmijenjeniElement, originalniElement, &mojRed);
+			scanf("%c",&enter);
+			break;
 
-            break;
+
         case 'e':
+			while(1==1){
+				printf("\n\n\n a. Pretraga po Nazivu filma ");
+				printf("\n b. Pretraga po Imenu i prezimenu Redatelja");
+				printf("\n c. za izlaz\n") ;
+				scanf("%c",&submenu);
+				scanf("%c",&enter);
+				switch (submenu) {
+				case 'a':
+				printf("\n Unesite Naziv filma po kojem zelite pretrazivati: ");
+				fgets(originalniElement.nazivFilma,51,stdin);
+				IspisNaziv(&mojRed, originalniElement);
+				break;
+
+				case 'b':
+				printf("\n Unesite Ime i Prezime redatelja filma po kojem zelite pretrazivati: ");
+				fgets(originalniElement.directorImePrezime,51,stdin);
+				IspisImePrezime(&mojRed, originalniElement);
+				break;
+				case 'c':
+					goto label;
+				break;
+				}
+			}
             break;
 
 		case 'f':
-			printf("\n\n\nZelite li pretrazivati po godini izlaska filma ili po trajanju filma\n");
+			while(1==1){
+			printf("\n\n\n Zelite li pretrazivati po godini izlaska filma ili po trajanju filma\n");
 			printf("a. Pretraga po godini izlaksa filma\n");
-    		printf("b. Pretraga po trajanju u intervalu (od - do)\n");
+			printf("a. Pretraga po intervalu godina izlaksa filma\n");
+    		printf("c. Pretraga po intervalu trajanja (od - do) (d. za izlaz)\n");
+			printf("d. za izlaz\n");
 			scanf(" %c",&submenu);
 				switch(submenu){
 					case 'a':
@@ -203,8 +241,17 @@ int main (){
 					break;
 
 					case 'b':
+					printf("\n Unesite Godine za pretragu: ");
+					int dg,gg;
+					printf("\n Unesite donju granicu: ");
+					scanf(" %d",&dg);
+					printf("\n Unesite donju granicu: ");
+					scanf(" %d",&dg);
+					ispisGodineInterval(&mojRed,dg,gg);
+					break;
+
+					case 'c':
 					printf("\n Unesite Trajanje za pretragu u minutama: \n");
-					int dg, gg;
 					printf("\n Unesite donju granicu: ");
 					scanf(" %d",&dg);
 					printf("\n Unesite gornju granicu: ");
@@ -212,9 +259,14 @@ int main (){
 					ispisTrajanje(&mojRed,dg,gg);
 					scanf("%c",&enter);
 					break;
-				}
 
+					case 'd':
+					goto label;
+					break;
+				}
+			}
 			break;
+
         case 'g':
             break;
 
@@ -247,8 +299,8 @@ void ispisi(RedFilmova *pokRed) {
 		while (celija->sljedeca!=NULL)
 		{
 			celija = celija->sljedeca;
-			printf("\n\n%d. Film: \n\tNaziv filma: \t\t\t%s \n\tRedatelj: \t\t\t%s \n\tGodina izlaska: \t\t%d  \n\n\tTrajanje filma: \t\t%d min.",i+1, celija->elementi.nazivFilma, celija->elementi.directorImePrezime,celija->elementi.godina_izlaska,celija->elementi.trajanje);
 			i++;
+			printf("\n\n%d. Film: \n\tNaziv filma: \t\t\t%s \n\tRedatelj: \t\t\t%s \n\tGodina izlaska: \t\t%d  \n\n\tTrajanje filma: \t\t%d min.",i, celija->elementi.nazivFilma, celija->elementi.directorImePrezime,celija->elementi.godina_izlaska,celija->elementi.trajanje);
 		}	
 	}	
 } 
@@ -263,7 +315,22 @@ void ispisGodineIzlaska(RedFilmova *pokRed, int godina) {
 			celija = celija->sljedeca;
 			i++;
 			if(celija->elementi.godina_izlaska==godina)
-			printf("\n\n%d. Film: \n\tNaziv filma: \t\t\t%s \n\tRedatelj: \t\t\t%s \n\tGodina izlaska: \t\t%d  \n\n\tTrajanje filma: \t\t%d min.",i+1, celija->elementi.nazivFilma, celija->elementi.directorImePrezime,celija->elementi.godina_izlaska,celija->elementi.trajanje);
+			printf("\n\n%d. Film: \n\tNaziv filma: \t\t\t%s \n\tRedatelj: \t\t\t%s \n\tGodina izlaska: \t\t%d  \n\n\tTrajanje filma: \t\t%d min.",i, celija->elementi.nazivFilma, celija->elementi.directorImePrezime,celija->elementi.godina_izlaska,celija->elementi.trajanje);
+		}	
+	}	
+} 
+
+void ispisGodineInterval(RedFilmova *pokRed, int dg, int gg) {
+	CelijaReda *celija;
+	int i=0;
+	if (pokRed->izlaz != pokRed->ulaz){
+		celija = pokRed->izlaz;
+		while (celija->sljedeca!=NULL)
+		{
+			celija = celija->sljedeca;
+			i++;
+			if(celija->elementi.godina_izlaska>dg && celija->elementi.godina_izlaska<gg)
+			printf("\n\n%d. Film: \n\tNaziv filma: \t\t\t%s \n\tRedatelj: \t\t\t%s \n\tGodina izlaska: \t\t%d  \n\n\tTrajanje filma: \t\t%d min.",i, celija->elementi.nazivFilma, celija->elementi.directorImePrezime,celija->elementi.godina_izlaska,celija->elementi.trajanje);
 		}	
 	}	
 } 
@@ -278,7 +345,39 @@ void ispisTrajanje(RedFilmova *pokRed, int dg, int gg) {
 			celija = celija->sljedeca;
 			i++;
 			if(celija->elementi.trajanje>=dg && celija->elementi.trajanje<=gg)
-			printf("\n\n%d. Film: \n\tNaziv filma: \t\t\t%s \n\tRedatelj: \t\t\t%s \n\tGodina izlaska: \t\t%d  \n\n\tTrajanje filma: \t\t%d min.",i+1, celija->elementi.nazivFilma, celija->elementi.directorImePrezime,celija->elementi.godina_izlaska,celija->elementi.trajanje);
+			printf("\n\n%d. Film: \n\tNaziv filma: \t\t\t%s \n\tRedatelj: \t\t\t%s \n\tGodina izlaska: \t\t%d  \n\n\tTrajanje filma: \t\t%d min.",i, celija->elementi.nazivFilma, celija->elementi.directorImePrezime,celija->elementi.godina_izlaska,celija->elementi.trajanje);
+			
+		}	
+	}	
+} 
+
+void IspisImePrezime(RedFilmova *pokRed, Film originalniElement) {
+	CelijaReda *celija;
+	int i=0;
+	if (pokRed->izlaz != pokRed->ulaz){
+		celija = pokRed->izlaz;
+		while (celija->sljedeca!=NULL)
+		{
+			celija = celija->sljedeca;
+			i++;
+			if(strcmp(celija->elementi.directorImePrezime,originalniElement.directorImePrezime)==0)
+			printf("\n\n%d. Film: \n\tNaziv filma: \t\t\t%s \n\tRedatelj: \t\t\t%s \n\tGodina izlaska: \t\t%d  \n\n\tTrajanje filma: \t\t%d min.",i, celija->elementi.nazivFilma, celija->elementi.directorImePrezime,celija->elementi.godina_izlaska,celija->elementi.trajanje);
+			
+		}	
+	}	
+} 
+ 
+void IspisNaziv(RedFilmova *pokRed, Film originalniElement) {
+	CelijaReda *celija;
+	int i=0;
+	if (pokRed->izlaz != pokRed->ulaz){
+		celija = pokRed->izlaz;
+		while (celija->sljedeca!=NULL)
+		{
+			celija = celija->sljedeca;
+			i++;
+			if(strcmp(originalniElement.nazivFilma,celija->elementi.nazivFilma)==0)
+			printf("\n\n%d. Film: \n\tNaziv filma: \t\t\t%s \n\tRedatelj: \t\t\t%s \n\tGodina izlaska: \t\t%d  \n\n\tTrajanje filma: \t\t%d min.",i, celija->elementi.nazivFilma, celija->elementi.directorImePrezime,celija->elementi.godina_izlaska,celija->elementi.trajanje);
 			
 		}	
 	}	
@@ -311,39 +410,3 @@ void izmijeni(Film izmijenjeniElement, Film originalniElement, RedFilmova* pokRe
 		}
 	}
 }
-
-/*
-void bubbleChar(RedFilmova *pokRed){
-
-	CelijaReda* ptrenutnaCelija = pokRed->ulaz;
-	int i, j, k, flag, dulj=1;
-	CelijaReda temp;
-
-	while(ptrenutnaCelija->sljedeca!=NULL){
-		dulj++;
-		ptrenutnaCelija = ptrenutnaCelija->sljedeca;
-	}
-
-	for (i = 0; i <= dulj ; i++)
-	{
-		flag = 0;
-		for (j = 0; j < 51; j++)
-		{
-			if (ptrenutnaCelija->sljedeca->elementi.nazivFilma[j] < ptrenutnaCelija->elementi.nazivFilma[j])
-			{
-				temp.elementi = ptrenutnaCelija->sljedeca->elementi;
-				ptrenutnaCelija->elementi = ptrenutnaCelija->sljedeca->elementi;
-				ptrenutnaCelija->sljedeca->elementi= temp.elementi;
-				flag = 1;
-			}
-		}
-
-		if (flag == 0)
-		{
-			break;
-		}
-		ptrenutnaCelija = ptrenutnaCelija->sljedeca;
-	}
-}
-*/
-
