@@ -66,15 +66,15 @@ int main (){
         case 'a':
 			printf("\n Unesite podatke o novom filmu ");
 			printf("\n Unesite Naziv filma: ");
-			scanf("%30s",unos.nazivFilma);
+			scanf(" %30s",unos.nazivFilma);
 			printf("\n Unesite ime Redatelja filma: ");
-			scanf("%30s",unos.directorIme);
+			scanf(" %30s",unos.directorIme);
 			printf("\n Unesite prezime Redatelja filma: ");
-			scanf("%30s",unos.directorPrezime);
+			scanf(" %30s",unos.directorPrezime);
 			printf("\n Unesite godinu izlaska filma: ");
-			scanf("%d",&unos.godina_izlaska);
+			scanf(" %d",&unos.godina_izlaska);
 			printf("\n Unesite Naziv filma: ");
-			scanf("%d",&unos.trajanje);
+			scanf(" %d",&unos.trajanje);
 
 			ubaci(unos, &mojRed);
             break;
@@ -92,36 +92,37 @@ int main (){
 			printf("\n a. za izmjenu po Nazivu filma\n");
 			printf("\n b. za izmjenu po Imenu redatelja filma\n");
 			printf("\n c. za izmjenu po Prezimenu redatelja filma\n");
+			printf("\nUnesite svoj odabir: ");
 			scanf(" %c", &submenu);
 
 				switch(submenu){
 					case 'a':
 			printf("\n Unesite Naziv filma koji zelite zamijeniti: ");
-			scanf("%30s",originalniElement.nazivFilma);
+			scanf(" %30s",originalniElement.nazivFilma);
 					break;
 
 					case 'b':
 			printf("\n Unesite Ime redatelja filma koji zelite zamijeniti: ");
-			scanf("%30s",originalniElement.directorIme);
+			scanf(" %30s",originalniElement.directorIme);
 					break;
 
 					case 'c':
 			printf("\n Unesite Ime redatelja filma koji zelite zamijeniti: ");
-			scanf("%30s",originalniElement.directorPrezime);
+			scanf(" %30s",originalniElement.directorPrezime);
 					break;
 				}
 
 			printf("\n\n\nUnesite podatke o novom filmu koji ce zamjijeniti postojece\n");
 			printf("\n Unesite Naziv filma: ");
-			scanf("%30s",izmijenjeniElement.nazivFilma);
+			scanf(" %30s",izmijenjeniElement.nazivFilma);
 			printf("\n Unesite ime Redatelja filma: ");
-			scanf("%30s",izmijenjeniElement.directorIme);
+			scanf(" %30s",izmijenjeniElement.directorIme);
 			printf("\n Unesite prezime Redatelja filma: ");
-			scanf("%30s",izmijenjeniElement.directorPrezime);
+			scanf(" %30s",izmijenjeniElement.directorPrezime);
 			printf("\n Unesite godinu izlaska filma: ");
-			scanf("%d",&izmijenjeniElement.godina_izlaska);
+			scanf(" %d",&izmijenjeniElement.godina_izlaska);
 			printf("\n Unesite Naziv filma: ");
-			scanf("%D",&izmijenjeniElement.trajanje);
+			scanf(" %D",&izmijenjeniElement.trajanje);
 
 			izmijeni(izmijenjeniElement, originalniElement, &mojRed);
 
@@ -154,7 +155,7 @@ void ubaci(Film x, RedFilmova *pokRed) {
 void ispisi(RedFilmova *pokRed) {
 	CelijaReda *celija;
 	if (pokRed->ulaz == pokRed->izlaz)   
-		printf("Red Filmova je prazan");
+		printf("\n\nRed Filmova je prazan\n\n");
 	if (pokRed->izlaz != pokRed->ulaz){
 		celija = pokRed->izlaz;
 printf("\n\nIspis reda: \n\n");
