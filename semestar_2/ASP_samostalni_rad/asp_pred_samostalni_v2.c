@@ -171,7 +171,7 @@ int main (){
 			printf("\n a. za izmjenu po Nazivu filma\n");
 			printf("\n b. za izmjenu po Imenu i Prezimenu redatelja filma");
 			printf("\n c. za izlaz\n");
-			printf("\nUnesite svoj odabir: ");
+			printf("\n Unesite svoj odabir: ");
 			scanf(" %c", &submenu);
 			scanf("%c",&enter);
 
@@ -218,6 +218,7 @@ int main (){
 				printf("\n\n\n a. Pretraga po Nazivu filma ");
 				printf("\n b. Pretraga po Imenu i Prezimenu Redatelja");
 				printf("\n c. za izlaz\n") ;
+				printf("\n Unesite svoj odabir: ");
 				scanf(" %c",&submenu);
 				switch (submenu) {
 				case 'a':
