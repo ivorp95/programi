@@ -34,6 +34,7 @@ int main()
 		printf("\n poljeChar[%d] = ", i);
 		scanf(" %c", &poljeChar[i]);
 	}
+	printf("%20s",poljeChar);
 	bubbleChar(poljeChar, MAX);
 	
 
