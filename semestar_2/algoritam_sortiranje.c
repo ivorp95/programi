@@ -15,19 +15,20 @@ int main()
 	int i;
 
 	
-	/* sortiranje integera
+	//sortiranje integera
+
 	for (i = 0; i < MAX; i++)
 	{
 		printf("\n poljeInt[%d] = ", i);
 		scanf("%d", &poljeInt[i]);
 	}
-	bubbleInt(poljeInt, MAX);
-	*/
+	//bubbleInt(poljeInt, MAX);
+	
 	//selectionInt(poljeInt, MAX);
-	//insertionInt(poljeInt, MAX);
+	insertionInt(poljeInt, MAX);
 	
 
-	
+	/*
 	// sortiranje znakova
 	for (i = 0; i < MAX; i++)
 	{
@@ -36,14 +37,13 @@ int main()
 	}
 	printf("%20s",poljeChar);
 	bubbleChar(poljeChar, MAX);
-	
+	*/
 
 	printf("\n\n");
 }
 
 
-void bubbleInt(int polje[], int dulj)
-{
+void bubbleInt(int polje[], int dulj){
 	int i, j, k, temp, flag;
 
 	printf("\n\n --- BUBBLE SORT ---");
@@ -76,8 +76,7 @@ void bubbleInt(int polje[], int dulj)
 }
 
 
-void selectionInt(int polje[], int dulj)
-{
+void selectionInt(int polje[], int dulj){
 	int i, j, j_min, k, temp;
 
 	printf("\n\n --- SELECTION SORT ---");
@@ -110,8 +109,7 @@ void selectionInt(int polje[], int dulj)
 }
 
 
-void insertionInt(int polje[], int dulj)
-{
+void insertionInt(int polje[], int dulj){
 	int i, j, k, temp;
 
 	printf("\n\n --- INSERTION SORT ---");
