@@ -284,7 +284,7 @@ label:do {
 			//sleep(100);
 			printf("b. Pretraga po intervalu godina izlaksa filma\n");
 			//sleep(100);
-			printf("c. Pretraga po intervalu trajanja (od - do) (d. za izlaz)\n");
+			printf("c. Pretraga po intervalu trajanja\n");
 			//sleep(100);
 			printf("d. za izlaz\n");
 			//sleep(100);
@@ -300,7 +300,7 @@ label:do {
 				break;
 
 			case 'b':
-				printf("\n Unesite Godine za pretragu: ");
+				printf("\n Unesite interal godina za pretragu \n");
 				int dg, gg;
 				printf("\n Unesite donju granicu: ");
 				scanf(" %d", &dg);
@@ -310,7 +310,7 @@ label:do {
 				break;
 
 			case 'c':
-				printf("\n Unesite Trajanje za pretragu u minutama: \n");
+				printf("\n Unesite interval trajanja za pretragu u minutama \n");
 				printf("\n Unesite donju granicu: ");
 				scanf(" %d", &dg);
 				printf("\n Unesite gornju granicu: ");
