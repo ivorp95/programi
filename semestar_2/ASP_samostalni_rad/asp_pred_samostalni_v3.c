@@ -40,7 +40,7 @@ int main() {
 	mojRed.izlaz = mojRed.ulaz = (CelijaReda*)malloc(sizeof(CelijaReda));
 	char menu_opcija, submenu, enter;
 
-	// PD unosi
+// PD unosi
 	strcpy(unos.nazivFilma, "The Dark Knight\n");
 	strcpy(unos.directorImePrezime, "Cristopher Nolan\n");
 	unos.godina_izlaska = 2008;
@@ -116,29 +116,29 @@ int main() {
 	unos.godina_izlaska = 2009;
 	unos.trajanje = 153;
 	ubaci(unos, &mojRed);
-	//
+//
 
-	sleep(200);
+	//sleep(200);
 	printf("\nProgram za unos filmova preko celija u strukturu reda, unose se podatci o:\nNazivu filma,\nImenu i Prezimenu redatelja,\nGodini izdavanja filma,\nTrajanju filma u minutama.\n");
 
 label:do {
-	sleep(500);
+	//sleep(500);
 	printf("\n\n\n\n\nGLAVNI IZBORNIK:\n\n");
-	sleep(500);
+	//sleep(500);
 	printf("a. Unos podataka o novom filmu.\n");
-	sleep(100);
+	//sleep(100);
 	printf("b. Ispis svih podataka trenutno pohranjenih u redu.\n");
-	sleep(100);
+	//sleep(100);
 	printf("c. Brisanje podataka iz reda.\n");
-	sleep(100);
+	//sleep(100);
 	printf("d. Izmjena postojecih podataka u redu.\n");
-	sleep(100);
+	//sleep(100);
 	printf("e. Pretraga podataka po Nazivu filma ili Imenu i Prezimenu redatelja.\n");
-	sleep(100);
+	//sleep(100);
 	printf("f. Pretraga podataka po Godini izdavanja filma ili Trajanju filma u minutama.\n");
-	sleep(100);
+	//sleep(100);
 	printf("g. Zavrsetak programa.\n");
-	sleep(500);
+	//sleep(500);
 	printf("\nUnesite svoj odabir: ");
 	scanf(" %c", &menu_opcija);
 	switch (menu_opcija) {
@@ -177,15 +177,15 @@ label:do {
 
 	case 'd':
 		do {
-			sleep(100);
+			//sleep(100);
 			printf("\n\n\n PODIZBORNIK ZA IZMJENU :\n");
-			sleep(100);
+			//sleep(100);
 			printf("\n a. za izmjenu po Nazivu filma\n");
-			sleep(100);
+			//sleep(100);
 			printf("\n b. za izmjenu po Imenu i Prezimenu redatelja filma\n");
-			sleep(100);
+			//sleep(100);
 			printf("\n c. za izlaz\n");
-			sleep(100);
+			//sleep(100);
 			printf("\n Unesite svoj odabir: ");
 			scanf(" %c", &submenu);
 			scanf("%c", &enter);
@@ -194,7 +194,7 @@ label:do {
 			case 'a':
 				printf("\n Unesite Naziv filma koji zelite zamijeniti: ");
 				fgets(originalniElement.nazivFilma, 51, stdin);
-				sleep(100);
+				//sleep(100);
 				printf("\n\n\n Unesite podatke o novom filmu koji ce zamjijeniti postojece\n");
 				printf("\n Naziv filma: ");
 				scanf("%c", &enter);
@@ -220,7 +220,7 @@ label:do {
 				scanf("%c", &enter);
 
 
-				sleep(100);
+				//sleep(100);
 				printf("\n\n\n Unesite podatke o novom filmu koji ce zamjijeniti postojece\n");
 				printf("\n Naziv filma: ");
 				fgets(izmijenjeniElement.nazivFilma, 51, stdin);
@@ -245,13 +245,13 @@ label:do {
 
 	case 'e':
 		while (1 == 1) {
-			sleep(100);
+			//sleep(100);
 			printf("\n\n\n a. Pretraga po Nazivu filma ");
-			sleep(100);
+			//sleep(100);
 			printf("\n b. Pretraga po Imenu i Prezimenu Redatelja");
-			sleep(100);
+			//sleep(100);
 			printf("\n c. za izlaz\n");
-			sleep(100);
+			//sleep(100);
 			printf("\n Unesite svoj odabir: ");
 			scanf(" %c", &submenu);
 			switch (submenu) {
@@ -277,17 +277,17 @@ label:do {
 
 	case 'f':
 		while (1 == 1) {
-			sleep(100);
+			//sleep(100);
 			printf("\n\n\n Zelite li pretrazivati po godini izlaska filma ili po trajanju filma\n");
-			sleep(100);
+			//sleep(100);
 			printf("a. Pretraga po godini izlaksa filma\n");
-			sleep(100);
+			//sleep(100);
 			printf("b. Pretraga po intervalu godina izlaksa filma\n");
-			sleep(100);
+			//sleep(100);
 			printf("c. Pretraga po intervalu trajanja (od - do) (d. za izlaz)\n");
-			sleep(100);
+			//sleep(100);
 			printf("d. za izlaz\n");
-			sleep(100);
+			//sleep(100);
 			printf("\n Unesite svoj odabir: ");
 			scanf("%c", &submenu);
 			switch (submenu) {
