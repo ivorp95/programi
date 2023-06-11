@@ -75,6 +75,7 @@ Lista* zadnjaCelija(Lista* pokLista) {
 		if (celija == NULL) return pokLista;
 		if (celija->sljedeca == NULL) return celija;
 	} while (celija->sljedeca != NULL);
+	return 0;
 }
 
 void ubaci(Olovka x, Lista* pozicija_ubacivanja) {
