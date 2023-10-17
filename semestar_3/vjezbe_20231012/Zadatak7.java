@@ -20,6 +20,6 @@ public class Zadatak7 {
             broj=sc.nextInt();
         }
 
-        System.out.println("Aritmeticka sredina je :" +(suma/brojac));
+        System.out.printf( "Aritmeticka sredina je : %.4f\n" , (suma/brojac));
     }
 }
