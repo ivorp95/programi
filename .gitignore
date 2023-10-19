@@ -39,3 +39,6 @@ ehthumbs.db
 Thumbs.db
 .vscode
 .dSYM
+.project
+.classpath
+
