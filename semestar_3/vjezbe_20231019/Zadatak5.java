@@ -7,6 +7,6 @@ public class Zadatak5 {
         String recenica=sc.nextLine();
         char zadnjeSlovo=recenica.charAt(recenica.length()-1);
 
-        System.out.println("Prvo slovo je: "+zadnjeSlovo);
+        System.out.println("Zadnje slovo je: "+zadnjeSlovo);
     }
 }
