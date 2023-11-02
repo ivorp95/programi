@@ -96,22 +96,28 @@ public class RegObrazac {
 			try {
 				imeS=String.valueOf(JIme.getText());
 				prezimeS=String.valueOf(JPrezime.getText());
-				emailS=String.valueOf(Jemail.getText());
 			}
 			catch(Exception e2){
-				JOptionPane.showMessageDialog(null, "Ime, Prezime, E-mail - morate unjeti string znakova");
+				JOptionPane.showMessageDialog(null, "Ime, Prezime - morate unjeti string znakova");
+			}
+
+			try {
+				emailS=String.valueOf(Jemail.getText());
+			} catch (Exception e3) {
+				
 			}
 			
 			try {
 				jmbagS=Integer.parseUnsignedInt(Jjmbag.getText());
+
 				System.out.println(imeS);
 				System.out.println(prezimeS);
 				System.out.println(emailS);
 				System.out.println(jmbagS);
-				
+
 				JOptionPane.showMessageDialog(null, "Uspijesno ste se registrirali");
 			}
-			catch(Exception e3) {
+			catch(Exception e4) {
 				JOptionPane.showMessageDialog(null, "JMBAG - morate unjeti brojeve");
 			}
 			
