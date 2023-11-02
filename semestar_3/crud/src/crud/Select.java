@@ -12,9 +12,16 @@ public class Select {				// SELECT *(sve) FROM tablica / SELECT ime, prezime, ..
 	public static void main(String[] args) {
 		
 		try {
-		Class.forName("com.mysql.cj.jdbc.Driver");					//rad sa serverom mora biti u try/catch bloku
-		Connection con=DriverManager.getConnection("jdbc:mysql://student.veleri.hr/isimac?serverTimezone=UTC","isimac","is123");			//Connection klasa  con Objekt spajanje na sql server - serverTimezone=UTC da bi vrijeme lokalno i na serveru bilo isto
-		String upit="SELECT * FROM ooop_simac";
+		Class.forName("com.mysql.jdbc.Driver");					//rad sa serverom mora biti u try/catch bloku
+		}
+		catch (Exception e2){
+
+		}
+
+
+		try{
+		Connection con=DriverManager.getConnection("jdbc:mysql://student.veleri.hr/ipangos?serverTimezone=UTC","ipangos","11");			//Connection klasa  con Objekt spajanje na sql server - serverTimezone=UTC da bi vrijeme lokalno i na serveru bilo isto
+		String upit="SELECT * FROM ooop_pangos";
 		PreparedStatement ps=con.prepareStatement(upit);
 		ResultSet rs=ps.executeQuery();
 		
