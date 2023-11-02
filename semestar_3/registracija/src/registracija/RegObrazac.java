@@ -108,7 +108,7 @@ public class RegObrazac {
 			}
 			
 			try {
-				jmbagS=Integer.parseUnsignedInt(Jjmbag.getText());
+				jmbagS=Integer.parseInt(Jjmbag.getText());
 
 				System.out.println(imeS);
 				System.out.println(prezimeS);
