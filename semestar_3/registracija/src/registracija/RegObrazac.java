@@ -113,6 +113,14 @@ public class RegObrazac {
 			System.out.println(prezimeS);
 			System.out.println(emailS);
 			System.out.println(jmbagS);
+			
+			try{
+			JOptionPane.showMessageDialog(null, "Uspijesno ste se registrirali");
+			}
+			catch(Exception e4){
+
+			}
+
 			}
 		});
 		btnRegistriraj.setBounds(200, 226, 117, 29);
