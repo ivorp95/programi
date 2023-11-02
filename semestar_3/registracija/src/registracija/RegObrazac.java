@@ -108,6 +108,7 @@ public class RegObrazac {
 				System.out.println(prezimeS);
 				System.out.println(emailS);
 				System.out.println(jmbagS);
+				
 				JOptionPane.showMessageDialog(null, "Uspijesno ste se registrirali");
 			}
 			catch(Exception e3) {
