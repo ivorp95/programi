@@ -104,22 +104,17 @@ public class RegObrazac {
 			
 			try {
 				jmbagS=Integer.parseUnsignedInt(Jjmbag.getText());
+				System.out.println(imeS);
+				System.out.println(prezimeS);
+				System.out.println(emailS);
+				System.out.println(jmbagS);
+				JOptionPane.showMessageDialog(null, "Uspijesno ste se registrirali");
 			}
 			catch(Exception e3) {
 				JOptionPane.showMessageDialog(null, "JMBAG - morate unjeti brojeve");
 			}
 			
-			System.out.println(imeS);
-			System.out.println(prezimeS);
-			System.out.println(emailS);
-			System.out.println(jmbagS);
-			
-			try{
-			JOptionPane.showMessageDialog(null, "Uspijesno ste se registrirali");
-			}
-			catch(Exception e4){
 
-			}
 
 			}
 		});
