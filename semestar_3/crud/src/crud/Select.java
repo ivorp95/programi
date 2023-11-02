@@ -12,7 +12,7 @@ public class Select {				// SELECT *(sve) FROM tablica / SELECT ime, prezime, ..
 	public static void main(String[] args) {
 		
 		try {
-		Class.forName("com.mysql.jdbc.Driver");					//rad sa serverom mora biti u try/catch bloku
+		Class.forName("com.mysql.cj.jdbc.Driver");					//rad sa serverom mora biti u try/catch bloku
 		}
 		catch (Exception e2){
 
@@ -40,6 +40,7 @@ public class Select {				// SELECT *(sve) FROM tablica / SELECT ime, prezime, ..
 		}
 		catch(Exception e1) {
 			System.out.println("Doslo je do greske u try bloku");
+			e1.printStackTrace();
 		}
 
 	}
