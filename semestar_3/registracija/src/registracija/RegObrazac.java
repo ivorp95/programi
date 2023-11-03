@@ -119,6 +119,7 @@ public class RegObrazac {
 			}
 			catch(Exception e4) {
 				JOptionPane.showMessageDialog(null, "JMBAG - morate unjeti brojeve");
+				e4.printStackTrace();
 			}
 			
 

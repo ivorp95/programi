@@ -15,7 +15,7 @@ public class Select {				// SELECT *(sve) FROM tablica / SELECT ime, prezime, ..
 		Class.forName("com.mysql.cj.jdbc.Driver");					//rad sa serverom mora biti u try/catch bloku
 		}
 		catch (Exception e2){
-
+			e2.printStackTrace();
 		}
 
 
