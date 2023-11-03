@@ -4,7 +4,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-// za stavranje baze na student.veleri.hr:3306   CREATE_TABLE ooop_pangos( id_student INT PRIMARY KEY AUTO_INCREMENT NOT NULL, ime VARCHAR(30) NOT NULL, prezime VARCHAR(50) NOT NULL, godina INT NOT NULL ); DESCRIBE ooop_pangos;
+// za stavranje baze na student.veleri.hr:3306   CREATE TABLE ooop_pangos( id_student INT PRIMARY KEY AUTO_INCREMENT NOT NULL, ime VARCHAR(30) NOT NULL, prezime VARCHAR(50) NOT NULL, godina INT NOT NULL ); DESCRIBE ooop_pangos;
 
 
 public class Select {				// SELECT *(sve) FROM tablica / SELECT ime, prezime, .... FROM tablica
