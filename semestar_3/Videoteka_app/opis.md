@@ -60,7 +60,7 @@
     3. Baza podataka
         3.1. Tablica filmova sa podatcima o filmovima i trenutnom kolicinom na stanju, PK filma, FK korisnika koji su posudili taj film
         3.2. Tablica korisnika sa korisnickim imenom, PK korisnika, FK filma koji je trenutno posudio
-        3.3. Posudbom filma od korisnika stanje u količini u bazi se smanjuje za 1, a kod korisnika se vodi zapis da je posuđen 1 film
+        3.3. Posudbom filma o strane korisnika stanje u količini u bazi se smanjuje za 1, a kod korisnika se vodi zapis da je posuđen 1 film
         3.4. Administrator može brisati/dodavati/izmjenjivati filmove i podatke o filmovima
         3.5. Administrator može brisati neaktivne korisnike ili one koji nevraćaju filmove
         3.6. 
