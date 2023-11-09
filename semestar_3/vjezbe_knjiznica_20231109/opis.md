@@ -22,7 +22,7 @@ Aplikacija mora biti desktop. mora imati registrscijsku i login formu. Uloge nis
 
 
 2. Nakon dublje analize, utvrđeno je da nedostaju mnoge stavke unutar opisa sustava.
-Odrađen je drugi sastanak gdje jr definiran postupak izvođenja aplikacije.
+Odrađen je drugi sastanak gdje je definiran postupak izvođenja aplikacije.
 
 Aplikaciju koriste korisnici knjižnice. Djelatnik se inicijalo može registrirati i svaki puta se prilikom početka rada mora logirati u sustav.
 Nemožemo imati dva djelatnika sa istim registracijskim podatcima
