@@ -2,8 +2,8 @@
 
 # opis sustava
 
-1. dana 09. studenog 2023. p
-rojektant IME i PREZIME posjetio je knjižnicu "Programer".
+1. dana 09. studenog 2023.
+Projektant IME i PREZIME posjetio je knjižnicu "Programer".
 Razgovor se vodio s osobom zaduženom za informatizaciju poslovanja.
 
 Želi se izraditi sustav za praćenje korisnika, knjiga i posudbi knjiga od strane članova.
