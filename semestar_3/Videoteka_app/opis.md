@@ -12,7 +12,13 @@
 3. postaviti driver za izvršnu datoteku
 
 # 0. Korisnicka priča - zahtjevi
-    Aplikacija "Vidoeteka", applikacija za sustav videoteke sa mogućnosti prijave i registracije korisnika/admina, u aplikaciji se pristupa na glavni izbornik gjde su ponuđene opcije za pretragu/posudbu/unos/brisanje/uvid (zavisno o tipu prijavljenog korisnika) u stanje nekog od filmova u kolekciji. Korisnici mogu pretraživati filmove po nekom podatku (godina, ime, redatelj, trajanje) ili ispisati sve filmove koji se nalaze u kolekciji te klikom na "posudi" posuditi odabrani film, kod svakog filma nalazi se broj dostupnih komada za trenutnu posudbu. 
+    Aplikacija "Vidoeteka", applikacija za sustav videoteke sa mogućnosti prijave i registracije korisnika/admina,
+    u aplikaciji se pristupa na glavni izbornik gjde su ponuđene opcije
+    za pretragu/posudbu/unos/brisanje/uvid (zavisno o tipu prijavljenog korisnika)
+    u stanje nekog od filmova u kolekciji. Korisnici mogu pretraživati filmove
+    po nekom podatku (godina, ime, redatelj, trajanje) ili ispisati sve filmove
+    koji se nalaze u kolekciji te klikom na "posudi" posuditi odabrani film,
+    kod svakog filma nalazi se broj dostupnih komada za trenutnu posudbu.
 
 # 1. ANALIZA
     1. Mogućnost kreacije i prijave korisnika u sustav
