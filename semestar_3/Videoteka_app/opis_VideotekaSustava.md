@@ -1,4 +1,4 @@
-# Osnove objektno orijentiraniog programiranja
+## Osnove objektno orijentiraniog programiranja
 # Videoteka_app
 
 * Aplikacija mora imati:
