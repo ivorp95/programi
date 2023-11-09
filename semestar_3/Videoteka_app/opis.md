@@ -21,6 +21,10 @@
     kod svakog filma nalazi se broj dostupnih komada za trenutnu posudbu.
 
 # 1. ANALIZA
+
+
+    Koje mogućnosti aplikacija/sustav mora zadovoljiti:
+
     1. Mogućnost kreacije i prijave korisnika u sustav
     2. Izbornik sa opcijama za - pretragu/posudbu/uvid u stanje  -unos/brisanje/administriranje
     3. Pretraga po nekom podatku o filmu - godina/ime/redatelj/trajanje
@@ -29,3 +33,29 @@
     6. Praćenje stanja filmova u kolekciji -količina slobodna za posudbu  -količina koja je trenutno posuđena
     7. Zapisivanje koji je film posuđen kojem korisniku
     8. Posudbom filma količina slobodnih se smanjuje
+
+
+
+    Tko su akteri u aplikaciji/sustavu:
+
+    1. Korisnik
+    2. Administrator
+    3. Baza podataka
+
+
+
+    Kako akteri interaktiraju sa sustavom:
+    
+    1. Korisnik
+        1.1. Prijava u sustav sa korisničkim odobrenjima
+        1.2. Mogućnost pretrage/posudbe/uvida u filmove u kolekciji
+        1.3. Posudbom se stanje smanjuje te se korisniku pripisuje koji je film posudio
+
+    2. Administrator
+        2.1. Prijava u sustav sa administratorskim odobrenjima
+        2.2. Mogućnost pretrage/posudbe/uvida-/dodavanja/brisanja filmova u kolekciji
+        2.3. Mogućnost uvida u posuđene filmove i kod kojih su korisnika
+        2.4. Mogućnost uvida u popis korisnika te izmjenu(brisanje neaktivnih ili slično)
+
+    3. Baza podataka
+        3.1.
