@@ -1,4 +1,4 @@
-package knjiznicaOOOP;
+package knjiznicaOOOP.src.knjiznicaOOOP;
 
 import knjiznicaOOOP.GlavniIzbornik;
 

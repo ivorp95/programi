@@ -1,4 +1,4 @@
-package knjiznicaOOOP;
+package knjiznicaOOOP.src.knjiznicaOOOP;
 
 // moramo importat ostale klase koje se pozivaju ovom klasom u obliku --  import packageName.className
 import knjiznicaOOOP.Login;
