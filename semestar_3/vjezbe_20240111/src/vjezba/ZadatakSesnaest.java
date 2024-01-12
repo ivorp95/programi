@@ -1,4 +1,4 @@
-package vjezba;
+package vjezbe_20240111.src.vjezba;
 import java.util.Scanner;
 
 public class ZadatakSesnaest {

@@ -1,4 +1,4 @@
-package vjezba;
+package vjezbe_20240111.src.vjezba;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
