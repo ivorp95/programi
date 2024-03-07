@@ -60,7 +60,9 @@ void prosjecnaTemp2(float* Ppolje, int brojUnosa, float *prosjek){
     float suma=0;
 
     for(int i=0; i<brojUnosa; i++){
-        suma+=Ppolje[i];
+        //suma+=Ppolje[i];
+        suma+= *(Ppolje+i); //moze polje[i] ili na adresi --- adresa prvog polja plus pomak za i --> *(polje+i)
+
     }
     prosjekF=(suma/brojUnosa);
 
