@@ -4,6 +4,7 @@
 
 
 float prosjecnaTemp(float* Ppolje, int brojUnosa);
+void prosjecnaTemp2(float* Ppolje, int brojUnosa, float *prosjek);
 
 int main (){
 
@@ -11,8 +12,11 @@ int main (){
     int brojUnosaS;
     float prosjek;
 
-    printf("Unesite broj unosa koje zelite pohraniti ");
+    do{
+    printf("Unesite broj unosa koje zelite pohraniti - minimalno 1, maximalno 10 ");
     scanf("%d",&brojUnosaS);
+    }
+    while(brojUnosaS>10 || brojUnosaS<1);
 
     printf("Unesite temperature za %d dana : \n", brojUnosaS);
 
@@ -22,7 +26,10 @@ int main (){
 
 
 
-    prosjek = prosjecnaTemp(&temperature[0], brojUnosaS);
+    //prosjek = prosjecnaTemp(&temperature[0], brojUnosaS);
+
+    prosjecnaTemp2(temperature, brojUnosaS, &prosjek);
+
 
         printf("Prosjecna temperatura: %.2f \n", prosjek);
 
@@ -43,4 +50,20 @@ float prosjecnaTemp(float* Ppolje,int brojUnosa){
     prosjek=(suma/brojUnosa);
 
     return prosjek;
+}
+
+
+
+void prosjecnaTemp2(float* Ppolje, int brojUnosa, float *prosjek){
+    
+    float prosjekF;
+    float suma=0;
+
+    for(int i=0; i<brojUnosa; i++){
+        suma+=Ppolje[i];
+    }
+    prosjekF=(suma/brojUnosa);
+
+    *prosjek=prosjekF;
+
 }
