@@ -2,7 +2,7 @@
 #include<limits.h>
 #include<string.h>
 
-# ifndef MAXP
+#ifndef MAXP
 #define MAXP 20
 #endif
 
@@ -14,7 +14,7 @@ void unosProcesa(Proces* procesi, int* pbrP)
 {
 	int i;
 
-	do 
+	do
 	{
 		printf("\n\n Unesite broj procesa za dodjelu procesorskog vremena: ");
 		scanf("%d", pbrP);
