@@ -41,13 +41,14 @@ void SJFalgoritam_pe(Proces* procesi, int brP, Algoritam* palgoritam)
 
 		if (indeks != -1)
 		{
-			if (procesi[indeks].remainingTime == 1)
+			if (procesi[indeks].remainingTime == 1) //tek kada funcija sljedeciProces izvrti procese da je RT = 1 
 			{
-				procesi[indeks].completionTime = tCurr + 1;
+				procesi[indeks].completionTime = tCurr + 1; //CT je uvijek tCurr +1 jer gledamo svaki vremenski trenuak
 				procesi[indeks].turnaroundTime = procesi[indeks].completionTime - procesi[indeks].arrivalTime;
 				procesi[indeks].waitingTime = procesi[indeks].turnaroundTime - procesi[indeks].burstTime;
 				procesi[indeks].flag = 1;
-				procesi[indeks].remainingTime = 0;
+				procesi[indeks].remainingTime = 0; //RT za obavljeni proces je = 0
+				// order netreba posto proces sa RT = 0 nece biti uzet u obzir 
 
 				tt_suma += procesi[indeks].turnaroundTime;
 				wt_suma += procesi[indeks].waitingTime;

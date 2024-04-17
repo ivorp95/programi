@@ -16,19 +16,26 @@ int sljedeciProcesSJF_npe(Proces* procesi, int brP, int tCurr)
 
 	for (i = 0; i < brP; i++)
 	{
-		if (procesi[i].flag == 0 && procesi[i].arrivalTime <= tCurr)
-		{
+		if (procesi[i].flag == 0 && procesi[i].arrivalTime <= tCurr) //isto kao kod FCFS samo bez uvjeta da je arival manje od atMin
+		{		//ako je ovaj uvjet zadovoljen trenutni proces nije zavrsen i dolazak mu je  <= trenutnom vremenu
+				// sljedeci poziv funkcije daje joj i novo vrijeme tCurr
+
 			if (procesi[i].burstTime < btMin || (procesi[i].burstTime == btMin && procesi[i].arrivalTime < atMin))
+				//kod prvog procesa uvjet je sigurno zadovoljen, za svaki sljedeci ili je BT manji od btMin(koji je ostao vrijednost BT proslog procesa)
+				//ili je BT novog jednak btMin a AT je manji od atMin(koji je AT proslog procesa)
 			{
 				indeks = i;
-				btMin = procesi[i].burstTime;
-				atMin = procesi[i].arrivalTime;
+				btMin = procesi[i].burstTime; //kada dobijemo prvi proces za obradu njegov BT postaje btMin
+				atMin = procesi[i].arrivalTime; //takoder njegov AT postaje atMin
 			}
 		}
 	}
 	return indeks;
 }
 
+
+
+// funkicja ista kao i kod FCFS
 
 void SJFalgoritam_npe(Proces* procesi, int brP, Algoritam* palgoritam)
 {
