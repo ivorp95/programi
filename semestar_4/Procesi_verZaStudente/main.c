@@ -27,17 +27,17 @@ int main()
 
 	printf("\n\n");
 	*/
-
+/*
 	inicijalizacijaVrijednostiProcesa(procesi, brP);
 	SJFalgoritam_npe(procesi, brP, &SJFnpe);
 	ispisIzlaznihPodataka(procesi, brP, SJFnpe, "SJF-npe");
-
+*/
 	printf("\n\n");
-/*
+
 	inicijalizacijaVrijednostiProcesa(procesi, brP);
 	SJFalgoritam_pe(procesi, brP, &SJFpe);
 	ispisIzlaznihPodataka(procesi, brP, SJFpe, "SJF-pe");
-*/
+
 	printf("\n\n");
 	return 0;
 }

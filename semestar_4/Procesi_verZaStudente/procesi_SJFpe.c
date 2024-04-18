@@ -18,10 +18,10 @@ int sljedeciProcesSJF_pe(Proces* procesi, int brP, int tCurr)
 	{
 		if (procesi[i].flag == 0 && procesi[i].arrivalTime <= tCurr)
 		{
-			if (procesi[i].remainingTime < rtMin || (procesi[i].remainingTime == rtMin && procesi[i].arrivalTime < atMin))
+			if (procesi[i].remainingTime /*burstTime kod SJFnpe*/< rtMin || (procesi[i].remainingTime == rtMin && procesi[i].arrivalTime < atMin))
 			{
 				indeks = i;
-				rtMin = procesi[i].remainingTime;
+				rtMin = procesi[i].remainingTime; //BT iz SJFnpe se zamjenjuje sa remainingTime isto tako i u uvijetu
 				atMin = procesi[i].arrivalTime;
 			}
 		}
@@ -41,7 +41,7 @@ void SJFalgoritam_pe(Proces* procesi, int brP, Algoritam* palgoritam)
 
 		if (indeks != -1)
 		{
-			if (procesi[indeks].remainingTime == 1) //tek kada funcija sljedeciProces izvrti procese da je RT = 1 
+			if (procesi[indeks].remainingTime == 1) //tek kada funcija sljedeciProces izvrti proces da je RT = 1 
 			{
 				procesi[indeks].completionTime = tCurr + 1; //CT je uvijek tCurr +1 jer gledamo svaki vremenski trenuak
 				procesi[indeks].turnaroundTime = procesi[indeks].completionTime - procesi[indeks].arrivalTime;

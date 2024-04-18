@@ -50,8 +50,8 @@ void SJFalgoritam_npe(Proces* procesi, int brP, Algoritam* palgoritam)
 		{
 			procesi[indeks].startTime = tCurr;
 			procesi[indeks].completionTime = tCurr + procesi[indeks].burstTime;
-			procesi[indeks].turnaroundTime = procesi[indeks].completionTime - procesi[indeks].arrivalTime;
-			procesi[indeks].waitingTime = procesi[indeks].turnaroundTime - procesi[indeks].burstTime;
+			procesi[indeks].turnaroundTime = procesi[indeks].completionTime - procesi[indeks].arrivalTime; // TT = CT - AT
+			procesi[indeks].waitingTime = procesi[indeks].turnaroundTime - procesi[indeks].burstTime; // WT = TT - BT
 			procesi[indeks].flag = 1;
 			procesi[indeks].order = i + 1;
 
