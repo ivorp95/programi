@@ -2,7 +2,10 @@
 
 #include<stdio.h>
 #include<time.h>
-#include<Windows.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+#include <unistd.h>
 
 #define MAXO 20
 #define MAXZ 40
@@ -46,7 +49,7 @@ int main()
 	do
 	{
 		printf("\n\n Unesite broj okvira u radnoj memoriji: ");
-		scanf_s("%d", &brO);
+		scanf("%d", &brO);
 		if (brO > MAXO)
 			printf("\n\t Najveci dopusteni broj okvira je %d. ", MAXO);
 		if (brO < 1)
@@ -59,7 +62,7 @@ int main()
 	for (j = 0; j < MAXZ; j++)
 	{
 		printf("\t %2d. zahtjev: ", j + 1);
-		scanf_s("%d", &slijedZahtjeva[j]);
+		scanf("%d", &slijedZahtjeva[j]);
 		if (slijedZahtjeva[j] == -1)
 		{
 			brZ = j;
@@ -67,7 +70,7 @@ int main()
 		}
 	}
 
-	strcpy_s(algoritam, 11, "Optimalni");  // FIFO_ts, LRU_ts, Optimalni
+	strcpy(algoritam,  "Optimalni");  // FIFO_ts, LRU_ts, Optimalni
 	brPromasaja = dodjelaOkvira(okviri, brO, slijedZahtjeva, brZ, slijedStanjaOkvira, slijedPromasaja, algoritam);
 
 	printf("\n\n\n ... %s algoritam ...........................", algoritam);
@@ -89,7 +92,7 @@ void inicijalizacijaVrijednostiOkvira(Okvir* okviri, int brO)
 		okviri[i].empty = 1;
 		okviri[i].pageNum = -1;
 		time(&okviri[i].timestamp);
-		Sleep(1000);
+		sleep(1000);
 	}
 }
 
@@ -107,7 +110,7 @@ int stranica_uOkviru(Okvir* okviri, int brO, int brojStranice, char* algoritam)
 			if (strcmp(algoritam, "LRU_ts") == 0)
 			{
 				time(&okviri[i].timestamp);
-				Sleep(1000);
+				sleep(1000);
 			}
 
 			break;
@@ -137,7 +140,7 @@ void upisi_uOkvir(Okvir* okviri, int iOkvira, int brojStranice)
 	okviri[iOkvira].empty = 0;
 	okviri[iOkvira].pageNum = brojStranice;
 	time(&okviri[iOkvira].timestamp);
-	Sleep(1000);
+	sleep(1000);
 }
 
 
