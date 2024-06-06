@@ -92,7 +92,7 @@ void inicijalizacijaVrijednostiOkvira(Okvir* okviri, int brO)
 		okviri[i].empty = 1;
 		okviri[i].pageNum = -1;
 		time(&okviri[i].timestamp);
-		sleep(1000);
+		usleep(1000);
 	}
 }
 
@@ -110,7 +110,7 @@ int stranica_uOkviru(Okvir* okviri, int brO, int brojStranice, char* algoritam)
 			if (strcmp(algoritam, "LRU_ts") == 0)
 			{
 				time(&okviri[i].timestamp);
-				sleep(1000);
+				usleep(1000);
 			}
 
 			break;
@@ -140,7 +140,7 @@ void upisi_uOkvir(Okvir* okviri, int iOkvira, int brojStranice)
 	okviri[iOkvira].empty = 0;
 	okviri[iOkvira].pageNum = brojStranice;
 	time(&okviri[iOkvira].timestamp);
-	sleep(1000);
+	usleep(1000);
 }
 
 
